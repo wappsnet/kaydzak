@@ -19,7 +19,7 @@ define("WAPPSNET_PATH", __DIR__);
 define("WAPPSNET_NAME", "WAPPSNET");
 
 require_once (WAPPSNET_PATH."/autoload.php");
-require_once(WAPPSNET_PATH."/fields/index.php");
+require_once(WAPPSNET_PATH."/fields/acf.php");
 
 //add admin actions
 add_action( 'init', 'run_app' );
