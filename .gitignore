@@ -1,0 +1,5 @@
+**/templates_c
+**/cache
+**/caches
+**/node_modules
+.idea

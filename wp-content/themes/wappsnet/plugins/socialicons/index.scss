@@ -1,0 +1,21 @@
+.plugin-social-icons {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: $empty-space-color;
+    font-size: 18px;
+    color: $primary-color;
+  }
+}

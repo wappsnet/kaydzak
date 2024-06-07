@@ -1,0 +1,40 @@
+.module-search {
+  width: 100%;
+  min-height: 600px;
+  position: relative;
+
+  .primary-content {
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .primary-title {
+      width: fit-content;
+      display: flex;
+      padding: 20px;
+      margin: 10px 0;
+      color: $text-secondary-color;
+      text-transform: uppercase;
+      text-shadow: 0 0 3px $cover-color;
+      background-color: $cover-color;
+      clear: both;
+      animation: slideDown 1s linear;
+    }
+
+    .secondary-title {
+      width: fit-content;
+      padding: 20px;
+      margin: 10px 0;
+      color: $text-secondary-color;
+      background-color: $cover-color;
+      animation: slideUp 1s linear;
+    }
+  }
+}

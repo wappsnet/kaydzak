@@ -1,0 +1,87 @@
+.auth-item {
+  width: 100%;
+  padding: 10px;
+
+  .auth-label {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: $text-primary-color;
+  }
+
+  .auth-icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: $text-primary-color;
+    z-index: 1;
+  }
+
+  .auth-field {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    background: $white-color;
+    border-radius: 5px;
+
+    &.auth-text {
+      height: 150px;
+    }
+
+    .auth-input {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 0;
+      background: $white-color;
+      border: $input-static-border;
+
+      &.auth-error {
+        border: $input-error-border;
+      }
+    }
+  }
+
+  .auth-footer {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+
+    .auth-button {
+      padding: 0 15px;
+      margin-right: 10px;
+      box-shadow: none;
+      border: none;
+      color: $text-secondary-color;
+    }
+  }
+
+
+  .auth-info-messages {
+    width: 100%;
+
+    .auth-message {
+      width: auto;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 13px;
+      color: $text-secondary-color;
+      font-weight: bold;
+      background: $info-success;
+      clear: both;
+    }
+  }
+}

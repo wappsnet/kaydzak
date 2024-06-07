@@ -1,0 +1,49 @@
+//files and icons----------------
+$theme_url: "/wp-content/themes/wappsnet/";
+$files_images: "#{$theme_url}assets/images/";
+$files_fonts: "#{$theme_url}assets/fonts/";
+$files_icons: "#{$theme_url}assets/images/icons/";
+$files_tiles: "#{$theme_url}assets/images/tiles/";
+$files_logo: "#{$theme_url}assets/images/tiles/";
+//files and icons----------------
+
+
+//typography colors
+$primary-color: #e82553;
+$secondary-color: #434343;
+$minor-color: #dddddd;
+$action-color: #2191f5;
+$white-color: #ffffff;
+$surface-primary-color: #ffffff;
+$surface-secondary-color: #f1f1f1;
+$empty-space-color: #f5f5f5;
+$text-primary-color: #212121;
+$text-secondary-color: #ffffff;
+$text-tertiary-color: #aaa;
+$chips-primary-color: #f1f1f1;
+$cover-color: rgba(0, 0, 0, 0.5);
+$info-success: #36c95c;
+$info-danger: #e82553;
+
+
+//typography sizes
+$header-height: 80px;
+$mobile-header-height: $header-height;
+$input-height: 45px;
+
+//typography shadows
+$main-shadow-circle: 0 0 5px rgba(0, 0, 0, 0.5);
+$main-shadow-top: 0 0 5px rgba(0, 0, 0, 0.5);
+$main-shadow-bottom: 0 0 5px rgba(0, 0, 0, 0.5);
+$main-shadow-left: 0 0 5px rgba(0, 0, 0, 0.5);
+$main-shadow-right: 0 0 5px rgba(0, 0, 0, 0.5);
+
+//typography borders
+$border-primary: 1px solid #F5F5F5;
+$border-secondary: 2px dashed #f1f1f1;
+$input-static-border: 2px solid #dddddd;
+$input-active-border: 2px solid #3199da;
+$input-error-border: 2px solid #960211;
+
+//transitions
+$primary-transition: all 0.3s ease-in-out;

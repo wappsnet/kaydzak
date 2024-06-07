@@ -1,0 +1,35 @@
+.footer-module {
+  width: 100%;
+
+  .footer-menu {
+    width: 100%;
+    background-color: $secondary-color;
+
+    .footer-menu-wrapper {
+      width: 100%;
+    }
+  }
+
+  .footer-social {
+    width: 100%;
+    background: $primary-color;
+
+    .footer-social-wrapper {
+      width: 100%;
+    }
+  }
+
+  .footer-apps {
+    width: 100%;
+
+    .footer-apps-wrapper {
+      width: 100%;
+      border-bottom: $border-primary;
+    }
+  }
+
+  .footer-rights {
+    width: 100%;
+    background-color: $surface-secondary-color;
+  }
+}

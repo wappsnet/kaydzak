@@ -1,0 +1,168 @@
+{
+  "menus": {
+    "primary": "primary",
+    "secondary": "secondary"
+  },
+
+  "post_types": [
+    {
+      "name": "shop",
+      "rest_name": "shop",
+      "params": {
+        "labels": {
+          "name": "Shop",
+          "singular_name": "Shop"
+        },
+        "public": true,
+        "menu_icon": "dashicons-products",
+        "has_archive": true,
+        "show_ui": true,
+        "hierarchical": false,
+        "show_in_rest": true,
+        "taxonomies": [
+          "category"
+        ],
+        "supports": [
+          "title",
+          "editor",
+          "author",
+          "thumbnail",
+          "excerpt",
+          "comments"
+        ]
+      }
+    },
+    {
+      "name": "art",
+      "rest_name": "art",
+      "params": {
+        "labels": {
+          "name": "Art Works",
+          "singular_name": "Art Works"
+        },
+        "public": true,
+        "menu_icon": "dashicons-format-image",
+        "has_archive": true,
+        "show_ui": true,
+        "hierarchical": false,
+        "show_in_rest": true,
+        "taxonomies": [
+          "category"
+        ],
+        "supports": [
+          "title",
+          "editor",
+          "author",
+          "thumbnail",
+          "excerpt",
+          "comments"
+        ]
+      }
+    }
+  ],
+  "taxonomies": [
+    {
+      "name": "category",
+      "settings": [
+        "shop",
+        "post",
+        "art"
+      ],
+      "params": {
+        "label": "Categories",
+        "meta_box_cb": "post_categories_meta_box",
+        "hierarchical": true,
+        "query_var": true,
+        "show_in_rest": true,
+        "rewrite": {
+          "slug": "category",
+          "hierarchical": true
+        }
+      }
+    },
+    {
+      "name": "material",
+      "settings": [
+        "art"
+      ],
+      "params": {
+        "label": "Materials",
+        "meta_box_cb": "art_materials_meta_box",
+        "hierarchical": true,
+        "show_in_rest": true,
+        "query_var": true,
+        "rewrite": {
+          "slug": "material",
+          "hierarchical": true
+        }
+      }
+    },
+    {
+      "name": "size",
+      "settings": [
+        "art"
+      ],
+      "params": {
+        "label": "Sizes",
+        "meta_box_cb": "art_sizes_meta_box",
+        "show_in_rest": true,
+        "hierarchical": true,
+        "query_var": true,
+        "rewrite": {
+          "slug": "size",
+          "hierarchical": true
+        }
+      }
+    },
+    {
+      "name": "style",
+      "settings": [
+        "art"
+      ],
+      "params": {
+        "label": "Styles",
+        "meta_box_cb": "art_styles_meta_box",
+        "show_in_rest": true,
+        "hierarchical": true,
+        "query_var": true,
+        "rewrite": {
+          "slug": "style",
+          "hierarchical": true
+        }
+      }
+    }
+  ],
+
+  "filters": {
+    "show_admin_bar": "__return_false"
+  },
+
+  "supports": [
+    "thumbnail",
+    "post-thumbnails",
+    "menus",
+    "widgets",
+    "title-tag",
+    "custom-logo",
+    "custom-header",
+    "custom-background",
+    "html5",
+    "admin-bar",
+    "widgets",
+    "automatic-feed-links",
+    "customize-selective-refresh-widgets"
+  ],
+
+  "features": [
+    "widgets",
+    "editor-style"
+  ],
+
+  "migrations": [
+
+  ],
+
+  "widgets": [
+
+  ]
+}

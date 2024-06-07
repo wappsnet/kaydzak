@@ -1,0 +1,49 @@
+.module-subscribe {
+  width: 100%;
+  padding: 10px;
+  background-color: $surface-secondary-color;
+
+  .subscribe-title {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .subscribe-header {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .subscribe-wrapper {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    .subscribe-block {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .subscribe-button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  .subscribe-footer {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}

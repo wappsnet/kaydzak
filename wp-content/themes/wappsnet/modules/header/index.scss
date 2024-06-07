@@ -1,0 +1,75 @@
+body {
+  padding-top: $header-height;
+}
+
+.header-module {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: $primary-color;
+  box-shadow: $main-shadow-circle;
+  z-index: 99;
+
+  .header-tools {
+    width: 100%;
+    height: $header-height;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+
+
+    .header-tool-item {
+      width: auto;
+      height: 100%;
+      padding: 5px 20px;
+      display: flex;
+      font-size: 1rem;
+      font-weight: bold;
+      align-items: center;
+      color: $text-secondary-color;
+      cursor: pointer;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-decoration: none;
+
+      img {
+        height: 100%;
+        width: auto;
+        border-radius: 100%;
+        border: $border-secondary;
+      }
+
+      .header-tool-name {
+        padding: 0 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media #{$small-and-down} {
+          display: none;
+        }
+      }
+
+      .header-tool-icon {
+        font-size: 1.5rem;
+        padding: 0 5px;
+      }
+
+      .header-tool-count {
+        font-weight: bold;
+        padding: 0 5px;
+        background: $action-color;
+        color: $text-secondary-color;
+        border-radius: 20px;
+      }
+
+      &.allow-hover {
+        transition: all 0.3s linear;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.2);
+          text-shadow: 0 0 3px $action-color;
+        }
+      }
+    }
+  }
+}

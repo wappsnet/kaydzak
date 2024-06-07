@@ -1,0 +1,25 @@
+.plugin-social-share {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+
+  .social-share {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: $primary-color;
+    color: $text-secondary-color;
+    font-size: 18px;
+
+    &:hover {
+      background: $action-color;
+    }
+  }
+}

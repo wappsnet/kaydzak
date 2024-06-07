@@ -1,0 +1,31 @@
+.module-page {
+  width: 100%;
+
+  .page-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: $surface-secondary-color;
+
+    .page-title {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+  }
+
+  .page-body {
+    width: 100%;
+    padding: 10px;
+    margin: 50px 0;
+
+    .page-content {
+      width: 100%;
+      padding: 20px;
+      border: $border-secondary;
+    }
+  }
+}

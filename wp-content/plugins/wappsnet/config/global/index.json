@@ -1,0 +1,10 @@
+{
+  "commerce": {
+    "currency": {
+      "ru": {
+        "key": "RUB",
+        "icon": "fa fa-rub"
+      }
+    }
+  }
+}

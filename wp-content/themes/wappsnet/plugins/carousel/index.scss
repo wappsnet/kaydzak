@@ -1,0 +1,31 @@
+.plugin-carousel {
+  .carousel-item {
+    padding: 10px;
+  }
+
+  .slick-arrow {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    border-radius: 100%;
+    background-color: $primary-color;
+    color: $text-secondary-color;
+    border: none;
+    opacity: 0.4;
+    z-index: 2;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.slick-next {
+      right: -10px;
+    }
+
+    &.slick-prev {
+      left: -10px;
+    }
+  }
+}
