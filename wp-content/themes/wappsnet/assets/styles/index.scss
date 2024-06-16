@@ -1,0 +1,10 @@
+@import "bootstrap/scss/bootstrap";
+@import "partials/variables";
+
+:root {
+  //Sizes
+  --wp-gap-xs: #{$wp-gap-xs};
+  --wp-gap-sm: #{$wp-gap-sm};
+  --wp-gap-md: #{$wp-gap-md};
+  --wp-gap-lg: #{$wp-gap-lg};
+}

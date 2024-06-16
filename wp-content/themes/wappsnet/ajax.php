@@ -1,5 +1,7 @@
 <?php
 //change password
+use Wappsnet\Core\Visitor;
+
 add_action('wp_ajax_nopriv_user_change_password', 'user_change_password');
 add_action('wp_ajax_user_change_password', 'user_change_password');
 
@@ -32,41 +34,41 @@ add_action( 'wp_ajax_nopriv_user_comment', 'user_comment');
 add_action( 'wp_ajax_user_comment', 'user_comment');
 
 function user_comment() {
-    $results = \Wappsnet\Core\Visitor::addComment($_REQUEST);
+    $results = Visitor::addComment($_REQUEST);
     die(json_encode($results));
 }
 
 function user_subscribe() {
-    $results = \Wappsnet\Core\Visitor::subscribe($_REQUEST);
+    $results = Visitor::subscribe($_REQUEST);
     die(json_encode($results));
 }
 
 function user_login() {
-    $results = \Wappsnet\Core\Visitor::login($_REQUEST);
+    $results = Visitor::login($_REQUEST);
     die(json_encode($results));
 }
 
 function user_register() {
-    $results = \Wappsnet\Core\Visitor::register($_REQUEST);
+    $results = Visitor::register($_REQUEST);
     die(json_encode($results));
 }
 
 function user_forgot() {
-    $results = \Wappsnet\Core\Visitor::forgot($_REQUEST);
+    $results = Visitor::forgot($_REQUEST);
     die(json_encode($results));
 }
 
 function user_logout() {
-    $results = \Wappsnet\Core\Visitor::logoutUser();
+    $results = Visitor::logoutUser();
     die(json_encode($results));
 }
 
 function user_save() {
-    $results = \Wappsnet\Core\Visitor::saveUser($_REQUEST);
+    $results = Visitor::saveUser($_REQUEST);
     die(json_encode($results));
 }
 
 function user_change_password() {
-    $results = \Wappsnet\Core\Visitor::change_password($_REQUEST);
+    $results = Visitor::change_password($_REQUEST);
     die(json_encode($results));
 }

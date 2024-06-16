@@ -13,6 +13,8 @@ License: GPLv2 or later
 Text Domain: Wappsnet
 */
 
+use Wappsnet\Core\Field;
+use Wappsnet\Core\Migration;
 use Wappsnet\Core\Parser;
 
 define("WAPPSNET_PATH", __DIR__);
@@ -81,9 +83,18 @@ function run_app() {
 
     // ----------create new meta boxes and filters---------------
     if(isset($wpData["supports"])) {
-        foreach ( $wpData["supports"] as $support ) {
-            add_theme_support( $support );
+        foreach ( $wpData["supports"] as $value ) {
+            add_theme_support( $value );
         }
+
+        add_theme_support( 'html5', array(
+            // Any or all of these.
+            'comment-list',
+            'comment-form',
+            'search-form',
+            'gallery',
+            'caption',
+        ));
     }
 
     // ----------create theme features---------------
@@ -97,12 +108,12 @@ function run_app() {
     if(isset($wpData["migrations"])) {
         if ( is_array( $wpData["migrations"] ) ) {
             foreach ( $wpData["migrations"] as $migration ) {
-                \Wappsnet\Core\Migration::up( $migration["name"], $migration["type"] );
+                Migration::up( $migration["name"], $migration["type"] );
             }
         }
     }
 
-    //------------up migrations --------------------
+    //------------up widgets --------------------
     if(isset($wpData["widgets"])) {
         if ( is_array( $wpData["widgets"] ) ) {
             foreach ( $wpData["widgets"] as $widget) {
@@ -111,11 +122,34 @@ function run_app() {
         }
     }
 
+    //------------up patterns --------------------
+    if(isset($wpData["patterns"])) {
+        if ( is_array( $wpData["patterns"] ) ) {
+            foreach ( $wpData["patterns"] as $pattern) {
+                $block_patter_category = wp_insert_term($pattern['category'], 'wp_pattern_category', array('slug' => $pattern['slug']));
+
+                if (!is_wp_error($block_patter_category)) {
+                    foreach ( $pattern["items"] as $item) {
+                        $block_pattern_id = wp_insert_post($item);
+
+                        if (!is_error($block_pattern_id)) {
+                            add_post_meta($block_pattern_id, 'wp_pattern_sync_status', 'unsynced');
+                            wp_set_object_terms($block_pattern_id, $pattern['slug'], 'wp_pattern_category');
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
     //------------up menus --------------------
     if(isset($wpData["menus"])) {
         if ( is_array( $wpData["menus"] ) ) {
             foreach ( $wpData["menus"] as $location => $description) {
-                wp_create_nav_menu($description);
+                if ($location) {
+                    wp_create_nav_menu($description);
+                }
             }
         }
     }
@@ -149,18 +183,20 @@ function run_app() {
     //-------------custom plugins configs--------------------------------
     if(isset($wpFields["plugins_in"])) {
         foreach ($wpFields["plugins_in"] as $wpField) {
-            \Wappsnet\Core\Field::setConnectedPlugins($wpField);
+            Field::setConnectedPlugins($wpField);
         }
     }
 }
 
-function my_rest_prepare_post($data, $post, $request) {
+function my_rest_prepare_post($data, $post) {
     $_data = $data->data;
 
     $fields = get_fields($post->ID);
 
-    foreach ($fields as $key => $value){
-        $_data[$key] = get_field($key, $post->ID);
+    if (!empty($fields)) {
+        foreach ($fields as $key => $value) {
+            $_data[$key] = get_field($key, $post->ID);
+        }
     }
 
     $data->data = $_data;

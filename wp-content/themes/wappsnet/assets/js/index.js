@@ -1,1 +1,0 @@
-require('./partials/main.js');

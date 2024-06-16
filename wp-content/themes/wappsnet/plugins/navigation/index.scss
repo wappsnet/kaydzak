@@ -1,50 +1,7 @@
 .plugin-navigation {
   width: 100%;
-  padding: 10px;
-
-  .menu {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-    margin: 0;
-
-    > .menu-item {
-      margin: 5px;
-
-      > a {
-        text-align: center;
-        display: inline-block;
-        padding: 10px 30px;
-        font-size: 1rem;
-        color: $text-secondary-color;
-        background-color: $primary-color;
-        font-weight: 600;
-
-        &:hover {
-          background-color: $action-color;
-        }
-      }
-
-      .sub-menu {
-        list-style: none;
-
-        > .menu-item {
-
-          > a {
-            display: inline-block;
-            padding: 3px 10px;
-            font-size: 0.75rem;
-            color: $text-primary-color;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-              color: $action-color;
-            }
-          }
-        }
-      }
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }

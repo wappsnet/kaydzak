@@ -326,27 +326,30 @@ class Visitor
     public static function checkAllowUser() {
         global $post;
 
-        $statusTypes = get_field('user_status', $post->ID);
-        if(!empty($statusTypes)) {
-            $currentUserId = get_current_user_id();
+        if (!empty($post)) {
+            $statusTypes = get_field('user_status', $post->ID);
 
-            $loginRequired = true;
+            if (!empty($statusTypes)) {
+                $currentUserId = get_current_user_id();
 
-            foreach ($statusTypes as $type) {
-                if ($type != 'authenticated') {
-                    $loginRequired = false;
+                $loginRequired = true;
+
+                foreach ($statusTypes as $type) {
+                    if ($type != 'authenticated') {
+                        $loginRequired = false;
+                    }
                 }
-            }
 
-            $linkData = Parser::getConfig('link');
+                $linkData = Parser::getConfig('link');
 
-            if ($loginRequired == true && !$currentUserId) {
-                if (wp_redirect($linkData['login'], 301)) {
-                    exit();
-                }
-            } else if ($loginRequired == false && $currentUserId) {
-                if (wp_redirect($linkData['cabinet'], 301)) {
-                    exit();
+                if ($loginRequired && !$currentUserId) {
+                    if (wp_redirect($linkData['login'], 301)) {
+                        exit();
+                    }
+                } else if (!$loginRequired && $currentUserId) {
+                    if (wp_redirect($linkData['cabinet'], 301)) {
+                        exit();
+                    }
                 }
             }
         }

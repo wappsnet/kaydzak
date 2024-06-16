@@ -1,5 +1,6 @@
 **/templates_c
 **/cache
+**/build
 **/caches
 **/node_modules
 .idea

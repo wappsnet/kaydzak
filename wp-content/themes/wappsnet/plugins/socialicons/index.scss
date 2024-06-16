@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: var(--wp-gap-sm);
 
   .social-link {
     width: 40px;
@@ -14,8 +14,6 @@
     align-items: center;
     margin: 0 5px;
     border-radius: 50%;
-    background: $empty-space-color;
-    font-size: 18px;
-    color: $primary-color;
+    font-size: 1rem;
   }
 }

@@ -19,7 +19,7 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <!--app scripts links-->
-    <link rel="stylesheet" href="{$build_link}wappsnet/app.min.css'"/>
+    <link rel="stylesheet" href="{$scripts['css']}"/>
 
     <!--app additional settings-->
 </head>

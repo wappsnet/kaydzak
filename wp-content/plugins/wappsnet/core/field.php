@@ -65,7 +65,7 @@ class Field {
 
         $primaryField = self::generateField([
             "key" => "field_connect_plugin".$post_type,
-            "label" => "Плагины",
+            "label" => "Plugins",
             "name" => "plugins",
             "type" => "repeater",
             "min" => "",
@@ -75,14 +75,14 @@ class Field {
             "sub_fields" => array(
                 self::generateField([
                     "key" => "field_plugin_title",
-                    "label" => "Загаловок",
+                    "label" => "Title",
                     "name" => "title",
                     "type" => "text",
                 ]),
 
                 self::generateField([
                     "key" => "field_plugin_name",
-                    "label" => "Плагин",
+                    "label" => "Plugin",
                     "name" => "plugin",
                     "type" => "select",
                     "choices" => $pluginsList,
@@ -92,7 +92,7 @@ class Field {
 
         $fieldGroup = self::generateGroup([
             "key" => "group_connect_plugin_".$post_type,
-            "title" => "Подключить плагин",
+            "title" => "Connect Plugin",
             "fields" => array(
                 $primaryField
             ),
@@ -113,16 +113,18 @@ class Field {
     public static function getConnectedPlugins() {
         global $post;
 
-        $pluginsList = get_field('plugins', $post->ID);
-
         $pluginsHtml = [];
 
-        if(is_array($pluginsList)) {
-            foreach ( $pluginsList as $item ) {
-                $pluginsHtml[] = Array(
-                    'title' => $item['title'],
-                    'plugin' => Render::get_plugin($item['plugin'])
-                );
+        if (!empty($post)) {
+            $pluginsList = get_field('plugins', $post->ID);
+
+            if (is_array($pluginsList)) {
+                foreach ($pluginsList as $item) {
+                    $pluginsHtml[] = array(
+                        'title' => $item['title'],
+                        'plugin' => Render::get_plugin($item['plugin'])
+                    );
+                }
             }
         }
 

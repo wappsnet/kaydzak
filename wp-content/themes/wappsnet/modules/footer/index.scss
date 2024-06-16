@@ -1,35 +1,43 @@
 .footer-module {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .footer-menu {
     width: 100%;
-    background-color: $secondary-color;
-
-    .footer-menu-wrapper {
-      width: 100%;
-    }
+    padding: var(--wp-gap-sm);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-social {
     width: 100%;
-    background: $primary-color;
-
-    .footer-social-wrapper {
-      width: 100%;
-    }
+    padding: var(--wp-gap-sm);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-apps {
     width: 100%;
-
-    .footer-apps-wrapper {
-      width: 100%;
-      border-bottom: $border-primary;
-    }
+    padding: var(--wp-gap-sm);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-rights {
     width: 100%;
-    background-color: $surface-secondary-color;
+    padding: var(--wp-gap-sm);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 }

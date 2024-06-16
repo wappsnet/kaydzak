@@ -7,6 +7,6 @@ use Wappsnet\Core\Parser;
 class Footer extends Layout
 {
 	protected function setData() {
-        $this->data["build_link"] = Parser::getBuildLink();
+        $this->data["scripts"] = Parser::getScripts();
     }
 }

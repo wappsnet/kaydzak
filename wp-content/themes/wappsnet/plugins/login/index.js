@@ -1,4 +1,4 @@
-import Auth from '../../assets/js/partials/auth';
+import Auth from '../../assets/scripts/partials/auth';
 
 PubSub.subscribe('document.ready', function() {
     $('.plugin-login .action-button').click(function() {

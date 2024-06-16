@@ -607,10 +607,9 @@ if ( ! class_exists( 'ACF_Site_Health' ) ) {
 					'value' => number_format_i18n( acf_pro_get_registered_block_count() ),
 				);
 
-				$blocks                 = acf_get_block_types();
-				$block_api_versions     = array();
-				$acf_block_versions     = array();
-				$blocks_using_post_meta = 0;
+				$blocks             = acf_get_block_types();
+				$block_api_versions = array();
+				$acf_block_versions = array();
 
 				foreach ( $blocks as $block ) {
 					if ( ! isset( $block_api_versions[ 'v' . $block['api_version'] ] ) ) {
@@ -619,10 +618,6 @@ if ( ! class_exists( 'ACF_Site_Health' ) ) {
 
 					if ( ! isset( $acf_block_versions[ 'v' . $block['acf_block_version'] ] ) ) {
 						$acf_block_versions[ 'v' . $block['acf_block_version'] ] = 0;
-					}
-
-					if ( ! empty( $block['use_post_meta'] ) ) {
-						++$blocks_using_post_meta;
 					}
 
 					++$block_api_versions[ 'v' . $block['api_version'] ];
@@ -637,11 +632,6 @@ if ( ! class_exists( 'ACF_Site_Health' ) ) {
 				$fields['blocks_per_acf_block_version'] = array(
 					'label' => __( 'Blocks Per ACF Block Version', 'acf' ),
 					'value' => $acf_block_versions,
-				);
-
-				$fields['blocks_using_post_meta'] = array(
-					'label' => __( 'Blocks Using Post Meta', 'acf' ),
-					'value' => number_format_i18n( $blocks_using_post_meta ),
 				);
 
 				$preload_blocks = acf_get_setting( 'preload_blocks' );

@@ -131,12 +131,12 @@ class Parser {
      *
      * @return array|mixed
      */
-    public static function getScripts($type = false, $path = null) {
+    public static function getScripts($type = false) {
         $theme_url = get_bloginfo('template_directory');
 
         $scripts = Array(
-            'css' => $theme_url.'/assets/build/app.min.css',
-            'js'  => $theme_url.'/assets/build/app.min.js',
+            'css' => $theme_url.'/build/main.css',
+            'js'  => $theme_url.'/build/main.js',
         );
 
         if($type === false) {
@@ -148,8 +148,7 @@ class Parser {
 
     public static function getBuildLink($path = '/') {
         $theme_url = get_bloginfo('template_directory');
-        $asset_url = $theme_url.'/assets/build/'.$path;
-        return $asset_url;
+        return $theme_url.'/build';
     }
 
     public static function getBodyData($type = 'class') {

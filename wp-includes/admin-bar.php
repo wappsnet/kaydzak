@@ -1285,10 +1285,7 @@ function wp_enqueue_admin_bar_header_styles() {
 function wp_enqueue_admin_bar_bump_styles() {
 	if ( current_theme_supports( 'admin-bar' ) ) {
 		$admin_bar_args  = get_theme_support( 'admin-bar' );
-
-        if (is_array($admin_bar_args)) {
-            $header_callback = $admin_bar_args[0]['callback'];
-        }
+		$header_callback = $admin_bar_args[0]['callback'];
 	}
 
 	if ( empty( $header_callback ) ) {

@@ -1,2 +1,2 @@
-<script type="text/javascript" src="{$build_link}wappsnet/app.min.js"></script>
+<script type="text/javascript" src="{$scripts['js']}"></script>
 </body>

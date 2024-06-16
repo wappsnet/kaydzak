@@ -1,23 +1,13 @@
-<div class="footer-module">
-    <div class="footer-social">
-        <div class="app-fill">
-            <div class="footer-social-wrapper">
-                {$socialPart}
-            </div>
+<footer class="footer-module">
+    <div class="container">
+        <div class="footer-social justify-content-center border-bottom">
+            {$social}
+        </div>
+        <div class="footer-menu justify-content-center border-bottom">
+            {$navigation}
+        </div>
+        <div class="footer-rights justify-content-center">
+            {$rights}
         </div>
     </div>
-    <div class="footer-menu">
-        <div class="app-fill">
-            <div class="footer-menu-wrapper">
-                {$navigationPart}
-            </div>
-        </div>
-    </div>
-    <div class="footer-rights">
-        <div class="app-fill">
-            <div class="footer-rights-wrapper">
-                {$rightsPart}
-            </div>
-        </div>
-    </div>
-</div>
+</footer>

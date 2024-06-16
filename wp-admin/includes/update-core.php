@@ -895,7 +895,7 @@ $_new_bundled_files = array(
 	'themes/twentytwentyone/'   => '5.6',
 	'themes/twentytwentytwo/'   => '5.9',
 	'themes/twentytwentythree/' => '6.1',
-	'themes/wappsnet/'  => '6.4',
+	'themes/twentytwentyfour/'  => '6.4',
 );
 
 /**

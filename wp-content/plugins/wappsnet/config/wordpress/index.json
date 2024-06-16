@@ -3,42 +3,14 @@
     "primary": "primary",
     "secondary": "secondary"
   },
-
   "post_types": [
     {
-      "name": "shop",
-      "rest_name": "shop",
+      "name": "news",
+      "rest_name": "news",
       "params": {
         "labels": {
-          "name": "Shop",
-          "singular_name": "Shop"
-        },
-        "public": true,
-        "menu_icon": "dashicons-products",
-        "has_archive": true,
-        "show_ui": true,
-        "hierarchical": false,
-        "show_in_rest": true,
-        "taxonomies": [
-          "category"
-        ],
-        "supports": [
-          "title",
-          "editor",
-          "author",
-          "thumbnail",
-          "excerpt",
-          "comments"
-        ]
-      }
-    },
-    {
-      "name": "art",
-      "rest_name": "art",
-      "params": {
-        "labels": {
-          "name": "Art Works",
-          "singular_name": "Art Works"
+          "name": "News",
+          "singular_name": "Article"
         },
         "public": true,
         "menu_icon": "dashicons-format-image",
@@ -52,8 +24,37 @@
         "supports": [
           "title",
           "editor",
-          "author",
           "thumbnail",
+          "post-thumbnails",
+          "author",
+          "excerpt",
+          "comments"
+        ]
+      }
+    },
+    {
+      "name": "events",
+      "rest_name": "events",
+      "params": {
+        "labels": {
+          "name": "Events",
+          "singular_name": "Event"
+        },
+        "public": true,
+        "menu_icon": "dashicons-format-image",
+        "has_archive": true,
+        "show_ui": true,
+        "hierarchical": false,
+        "show_in_rest": true,
+        "taxonomies": [
+          "category"
+        ],
+        "supports": [
+          "title",
+          "editor",
+          "thumbnail",
+          "post-thumbnails",
+          "author",
           "excerpt",
           "comments"
         ]
@@ -64,9 +65,8 @@
     {
       "name": "category",
       "settings": [
-        "shop",
         "post",
-        "art"
+        "news"
       ],
       "params": {
         "label": "Categories",
@@ -132,11 +132,9 @@
       }
     }
   ],
-
   "filters": {
     "show_admin_bar": "__return_false"
   },
-
   "supports": [
     "thumbnail",
     "post-thumbnails",
@@ -146,23 +144,35 @@
     "custom-logo",
     "custom-header",
     "custom-background",
-    "html5",
-    "admin-bar",
     "widgets",
     "automatic-feed-links",
     "customize-selective-refresh-widgets"
   ],
-
   "features": [
     "widgets",
     "editor-style"
   ],
-
   "migrations": [
 
   ],
-
   "widgets": [
 
+  ],
+  "patterns": [
+    {
+      "category": "Wappsnet",
+      "slug": "wappsnet",
+      "items": [
+        {
+          "post_title": "Social Icons",
+          "post_name": "block-pattern-social-icons",
+          "post_content": "<!-- wp:social-links {\"openInNewTab\":true,\"size\":\"has-normal-icon-size\",\"style\":{\"spacing\":{\"blockGap\":{\"top\":\"12px\",\"left\":\"12px\"}}},\"className\":\"is-style-logos-only\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"center\"}} -->\n<ul class=\"wp-block-social-links has-normal-icon-size is-style-logos-only\"><!-- wp:social-link {\"url\":\"#\",\"service\":\"facebook\"} /-->\n\n<!-- wp:social-link {\"service\":\"instagram\"} /-->\n\n<!-- wp:social-link {\"url\":\"#\",\"service\":\"twitter\"} /-->\n\n<!-- wp:social-link {\"url\":\"#\",\"service\":\"wordpress\"} /--></ul>\n<!-- /wp:social-links -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        }
+      ]
+    }
   ]
 }

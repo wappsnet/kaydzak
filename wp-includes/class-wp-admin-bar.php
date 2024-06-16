@@ -60,10 +60,7 @@ class WP_Admin_Bar {
 			 * add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 			 */
 			$admin_bar_args  = get_theme_support( 'admin-bar' );
-
-            if (is_array($admin_bar_args)) {
-                $header_callback = $admin_bar_args[0]['callback'];
-            }
+			$header_callback = $admin_bar_args[0]['callback'];
 		}
 
 		if ( empty( $header_callback ) ) {

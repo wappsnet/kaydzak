@@ -104,10 +104,6 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 				)
 			);
 
-			if ( ! is_array( $field['tabs'] ) ) {
-				$field['tabs'] = array();
-			}
-
 			$tabs  = $this->get_tabs();
 			$shown = array_filter(
 				$tabs,
@@ -118,17 +114,15 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 			);
 
 			foreach ( $shown as $name => $label ) {
-				if ( count( $shown ) > 1 ) {
-					acf_render_field_wrap(
-						array(
-							'type'           => 'tab',
-							'label'          => $label,
-							'key'            => 'acf_icon_picker_tabs',
-							'selected'       => $name === $field['value']['type'],
-							'unique_tab_key' => $name,
-						)
-					);
-				}
+				acf_render_field_wrap(
+					array(
+						'type'           => 'tab',
+						'label'          => $label,
+						'key'            => 'acf_icon_picker_tabs',
+						'selected'       => $name === $field['value']['type'],
+						'unique_tab_key' => $name,
+					)
+				);
 
 				$wrapper_class = str_replace( '_', '-', $name );
 				echo '<div class="acf-icon-picker-tabs acf-icon-picker-' . esc_attr( $wrapper_class ) . '-tabs">';
@@ -214,6 +208,7 @@ if ( ! class_exists( 'acf_field_icon_picker' ) ) :
 
 			echo '</div>';
 		}
+
 
 		/**
 		 * Renders field settings for the icon picker field.

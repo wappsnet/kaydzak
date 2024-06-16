@@ -1,12 +1,16 @@
 <?php
 namespace Plugins;
 
-use Wappsnet\Core\Parser;
 use Wappsnet\Core\Plugin;
 
 class SocialIcons extends Plugin
 {
 	protected function setData() {
-        $this->data['items'] = get_field('social_links', 'options');
+        $patterns = new \WP_Query([
+            'name' => 'block-pattern-social-icons',
+            'post_type' => 'wp_block',
+        ]);
+
+        $this->data['icons'] = do_blocks($patterns->post->post_content);
 	}
 }

@@ -11,8 +11,10 @@ class Header extends Layout
         //check to redirect user
         Visitor::checkAllowUser();
 
+
+
 		$this->data["seo_data"] = Parser::getSeoData();
-		$this->data["build_link"] = Parser::getBuildLink();
+		$this->data["scripts"] = Parser::getScripts();
 		$this->data["body_class"] = Parser::getBodyData('class');
 	}
 }
