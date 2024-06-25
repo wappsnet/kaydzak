@@ -1,21 +1,19 @@
 <div class="plugin-post">
-    <a href="{$post.link}"
-       class="post-wrapper">
-        <div class="post-media">
-            {if $post.media.video}
-                {$post.media.video}
-            {else}
-                <img src="{$post.media.image}"/>
-            {/if}
-        </div>
-        <div class="post-info">
-            <div class="post-date post-info-wrapper">
-                {$post.data->post_date}
-            </div>
-
-            <div class="post-title post-info-wrapper">
-                {$post.data->post_title}
+    <div class="card">
+        <a href="{$post.link}">
+            <img src="{$post.media.image}" class="card-img-top" alt="{$post.data->post_title}">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title"><a class="plugin-post__title" href="{$post.link}">{$post.data->post_title}</a></h5>
+            <p class="card-text"><small class="text-muted">{$post.data->post_date}</small></p>
+            <div class="plugin-post__categories">
+                {foreach from=$post.categories item=category}
+                    <a class="plugin-post__categories-item card-link" href="{$category.link}" style="color: {$category.fields.term_color.value};">
+                        <span class="{$category.fields.term_icon.value.type} {$category.fields.term_icon.value.value}"></span>
+                        {$category.data->name}
+                    </a>
+                {/foreach}
             </div>
         </div>
-    </a>
+    </div>
 </div>

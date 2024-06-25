@@ -31,34 +31,6 @@
           "comments"
         ]
       }
-    },
-    {
-      "name": "events",
-      "rest_name": "events",
-      "params": {
-        "labels": {
-          "name": "Events",
-          "singular_name": "Event"
-        },
-        "public": true,
-        "menu_icon": "dashicons-format-image",
-        "has_archive": true,
-        "show_ui": true,
-        "hierarchical": false,
-        "show_in_rest": true,
-        "taxonomies": [
-          "category"
-        ],
-        "supports": [
-          "title",
-          "editor",
-          "thumbnail",
-          "post-thumbnails",
-          "author",
-          "excerpt",
-          "comments"
-        ]
-      }
     }
   ],
   "taxonomies": [
@@ -76,57 +48,6 @@
         "show_in_rest": true,
         "rewrite": {
           "slug": "category",
-          "hierarchical": true
-        }
-      }
-    },
-    {
-      "name": "material",
-      "settings": [
-        "art"
-      ],
-      "params": {
-        "label": "Materials",
-        "meta_box_cb": "art_materials_meta_box",
-        "hierarchical": true,
-        "show_in_rest": true,
-        "query_var": true,
-        "rewrite": {
-          "slug": "material",
-          "hierarchical": true
-        }
-      }
-    },
-    {
-      "name": "size",
-      "settings": [
-        "art"
-      ],
-      "params": {
-        "label": "Sizes",
-        "meta_box_cb": "art_sizes_meta_box",
-        "show_in_rest": true,
-        "hierarchical": true,
-        "query_var": true,
-        "rewrite": {
-          "slug": "size",
-          "hierarchical": true
-        }
-      }
-    },
-    {
-      "name": "style",
-      "settings": [
-        "art"
-      ],
-      "params": {
-        "label": "Styles",
-        "meta_box_cb": "art_styles_meta_box",
-        "show_in_rest": true,
-        "hierarchical": true,
-        "query_var": true,
-        "rewrite": {
-          "slug": "style",
           "hierarchical": true
         }
       }
@@ -167,6 +88,33 @@
           "post_title": "Social Icons",
           "post_name": "block-pattern-social-icons",
           "post_content": "<!-- wp:social-links {\"openInNewTab\":true,\"size\":\"has-normal-icon-size\",\"style\":{\"spacing\":{\"blockGap\":{\"top\":\"12px\",\"left\":\"12px\"}}},\"className\":\"is-style-logos-only\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"center\"}} -->\n<ul class=\"wp-block-social-links has-normal-icon-size is-style-logos-only\"><!-- wp:social-link {\"url\":\"#\",\"service\":\"facebook\"} /-->\n\n<!-- wp:social-link {\"service\":\"instagram\"} /-->\n\n<!-- wp:social-link {\"url\":\"#\",\"service\":\"twitter\"} /-->\n\n<!-- wp:social-link {\"url\":\"#\",\"service\":\"wordpress\"} /--></ul>\n<!-- /wp:social-links -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        },
+        {
+          "post_title": "Recaptcha",
+          "post_name": "block-pattern-recaptcha",
+          "post_content": "<!-- wp:group {\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group\"><!-- wp:paragraph {\"align\":\"center\",\"fontSize\":\"small\"} -->\n<p class=\"has-text-align-center has-small-font-size\">This site is protected by reCAPTCHA and the <a href=\"http://kaydzak.ankap/privacy-policy/\" data-type=\"page\" data-id=\"3\">Privacy Policy</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        },
+        {
+          "post_title": "Copy Rights",
+          "post_name": "block-pattern-copy-rights",
+          "post_content": "<!-- wp:group {\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"center\"},\"fontSize\":\"medium\"} -->\n<div class=\"wp-block-group has-medium-font-size\"><!-- wp:site-logo {\"width\":35} /-->\n\n<!-- wp:paragraph {\"align\":\"center\",\"fontSize\":\"small\"} -->\n<p class=\"has-text-align-center has-small-font-size\">kaitzak.com © 2024 The Kaitzak Group. All Rights Reserved.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        },
+        {
+          "post_title": "Post Card",
+          "post_name": "block-pattern-post-card",
+          "post_content": "<!-- wp:group {\"lock\":{\"move\":false,\"remove\":true},\"metadata\":{\"name\":\"post-card-row\"},\"style\":{\"spacing\":{\"padding\":{\"top\":\"var:preset|spacing|40\",\"bottom\":\"var:preset|spacing|40\",\"left\":\"var:preset|spacing|40\",\"right\":\"var:preset|spacing|40\"},\"blockGap\":\"var:preset|spacing|50\"}},\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\",\"justifyContent\":\"left\"}} -->\n<div class=\"wp-block-group\" style=\"padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\"}} -->\n<div class=\"wp-block-group\"><!-- wp:image {\"id\":552,\"aspectRatio\":\"16/9\",\"scale\":\"cover\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\",\"lock\":{\"move\":false,\"remove\":true},\"metadata\":{\"name\":\"post-card-image\"}} -->\n<figure class=\"wp-block-image size-full\"><img src=\"http://kaydzak.ankap/wp-content/uploads/2024/06/Screenshot_166.png\" alt=\"\" class=\"wp-image-552\" style=\"aspect-ratio:16/9;object-fit:cover\"/></figure>\n<!-- /wp:image --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|30\"}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group\"><!-- wp:paragraph {\"lock\":{\"move\":false,\"remove\":true},\"metadata\":{\"name\":\"post-card-categories\"},\"style\":{\"layout\":{\"selfStretch\":\"fill\",\"flexSize\":null}}} -->\n<p>CATEGORIES</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|30\"}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"lock\":{\"move\":false,\"remove\":true},\"metadata\":{\"name\":\"post-card-heading\"},\"style\":{\"layout\":{\"selfStretch\":\"fill\",\"flexSize\":null}}} -->\n<h2 class=\"wp-block-heading\"></h2>\n<!-- /wp:heading --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|30\"},\"layout\":{\"selfStretch\":\"fill\",\"flexSize\":null}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"left\"},\"fontSize\":\"small\"} -->\n<div class=\"wp-block-group has-small-font-size\"><!-- wp:paragraph {\"lock\":{\"move\":false,\"remove\":true},\"metadata\":{\"name\":\"post-card-content\"}} -->\n<p>CONTENT</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|30\"},\"layout\":{\"selfStretch\":\"fill\",\"flexSize\":null}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"left\"},\"fontSize\":\"small\"} -->\n<div class=\"wp-block-group has-small-font-size\"><!-- wp:paragraph {\"lock\":{\"move\":false,\"remove\":true},\"metadata\":{\"name\":\"post-card-author\"}} -->\n<p>AUTHOR</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->",
           "post_status": "publish",
           "comment_status": "closed",
           "ping_status": "closed",

@@ -1,51 +1,29 @@
 <?php
 namespace Modules;
 
-use Wappsnet\Core\Blog;
 use Wappsnet\Core\Module;
 use Wappsnet\Core\Render;
 
-class Popular extends Module
-{
+class Popular extends Module {
+    protected $args = [
+        'count' => 9
+    ];
+
     protected function setData() {
-        $artItems = get_posts([
-            "numberposts" => 15,
+        $posts = get_posts([
+            "numberposts" => $this->args['count'],
             "fields" => "ids",
-            "post_type" => "art"
+            "post_type" => "post"
         ]);
 
-        foreach ($artItems as $key => $postId) {
-            $artItems[$key] = Blog::getPostData($postId);
-        }
-
-        $shopItems = get_posts([
-            "numberposts" => 10,
-            "fields" => "ids",
-            "post_type" => "shop"
-        ]);
-
-        foreach ($shopItems as $key => $postId) {
-            $shopItems[$key] = Render::get_plugin('Product', [
-              "id" => $postId,
+        foreach ($posts as $key => $postId) {
+            $posts[$key] =  Render::get_plugin('Post', [
+                "id" => $postId,
             ]);
         }
 
-        $categories = get_categories([
-            'post_type' => 'art'
-        ]);
+        print_r($posts);
 
-        foreach ($categories as $key => $category) {
-            $categories[$key] = [
-              'data' => $category,
-              'link' => '/art/'.$category->slug,
-            ];
-        }
-
-
-        $this->data['categories'] = Render::get_plugin('Categories', ['type' => 'art']);;
-        $this->data['art'] = array_chunk($artItems, count($artItems) / 3, true);
-        $this->data['shop'] = Render::get_plugin('Carousel', [
-            "items" => $shopItems,
-        ]);
+        $this->data['items'] = $posts;
     }
 }

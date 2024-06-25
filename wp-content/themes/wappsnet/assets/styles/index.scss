@@ -7,4 +7,15 @@
   --wp-gap-sm: #{$wp-gap-sm};
   --wp-gap-md: #{$wp-gap-md};
   --wp-gap-lg: #{$wp-gap-lg};
+
+  //Colors
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-success: #{$color-success};
+  --color-info: #{$color-info};
+  --color-danger: #{$color-danger};
+  --color-light: #{$color-light};
+  --color-dark: #{$color-dark};
+  --color-stroke: #{$color-stroke};
+  --color-header: #{$color-header};
 }

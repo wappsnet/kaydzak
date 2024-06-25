@@ -18,9 +18,7 @@ get_header();
 Render::load_layout('Header');
 
 Render::load_module('Header');
-//Render::load_module('Search');
-//Render::load_module('Popular');
-//Render::load_module('SubScribe');
+Render::load_module('Popular');
 Render::load_module('Footer');
 
 Render::load_layout('Footer');

@@ -1,6 +1,88 @@
 {
   "version": 3,
   "patterns": [
-    "social-icons"
-  ]
+    "wappsnet_popular_posts"
+  ],
+  "settings": {
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+    "dimensions": {
+      "minHeight": true
+    },
+    "position": {
+      "sticky": true
+    },
+    "spacing": {
+      "blockGap": true,
+      "margin": true,
+      "padding": true
+    },
+    "typography": {
+      "lineHeight": true
+    },
+    "color": {
+      "background": true,
+      "custom": true,
+      "customDuotone": true,
+      "customGradient": true,
+      "defaultDuotone": true,
+      "defaultGradients": true,
+      "defaultPalette": true,
+      "duotone": [],
+      "gradients": [],
+      "link": true,
+      "palette": [
+        {
+          "color": "#0D6EFDFF",
+          "name": "Primary Color",
+          "slug": "color-primary"
+        },
+        {
+          "color": "#6C757DFF",
+          "name": "Secondary Color",
+          "slug": "color-secondary"
+        },
+        {
+          "color": "#198754FF",
+          "name": "Success Color",
+          "slug": "color-success"
+        },
+        {
+          "color": "#0DCAF0FF",
+          "name": "Info Color",
+          "slug": "color-info"
+        },
+        {
+          "color": "#DC3545FF",
+          "name": "Danger Color",
+          "slug": "color-danger"
+        },
+        {
+          "color": "#F8F9FAFF",
+          "name": "Light Color",
+          "slug": "color-light"
+        },
+        {
+          "color": "#212529FF",
+          "name": "Dark Color",
+          "slug": "color-dark"
+        },
+        {
+          "color": "#f1f1f1",
+          "name": "Stroke Color",
+          "slug": "color-stroke"
+        },
+        {
+          "color": "#f9f9f9",
+          "name": "Header Color",
+          "slug": "color-header"
+        }
+      ],
+      "text": true
+    }
+  }
 }

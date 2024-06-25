@@ -13,34 +13,19 @@ License: GPLv2 or later
 Text Domain: Wappsnet
 */
 
-use Wappsnet\Core\Field;
 use Wappsnet\Core\Migration;
 use Wappsnet\Core\Parser;
 
 define("WAPPSNET_PATH", __DIR__);
-define("WAPPSNET_NAME", "WAPPSNET");
 
 require_once (WAPPSNET_PATH."/autoload.php");
 require_once(WAPPSNET_PATH."/fields/acf.php");
 
 //add admin actions
-add_action( 'init', 'run_app' );
-add_filter('manage_posts_columns', 'add_img_column');
-add_filter('manage_posts_custom_column', 'manage_img_column', 10, 2);
+add_action( 'init', 'runApp' );
 
-function add_img_column($columns) {
-    $columns = array_slice($columns, 0, 1, true) + array("img" => "Featured Image") + array_slice($columns, 1, count($columns), true);
-    return $columns;
-}
-
-function manage_img_column($column_name, $post_id) {
-    if( $column_name == 'img' ) {
-        echo get_the_post_thumbnail($post_id, 'thumbnail');
-    }
-    return $column_name;
-}
-
-function run_app() {
+function runApp(): void
+{
     $wpData = Parser::getConfig('wordpress');
     $wpFields = Parser::getConfig('fields');
 
@@ -48,10 +33,6 @@ function run_app() {
     if(isset($wpData["post_types"])) {
         foreach ( $wpData["post_types"] as $post_type ) {
             register_post_type( $post_type["name"], $post_type["params"] );
-
-            if(isset($post_type["rest_name"])) {
-                add_filter("rest_prepare_{$post_type["rest_name"]}", "my_rest_prepare_post", 10, 3);
-            }
         }
     }
     // ----------create post type---------------
@@ -128,16 +109,23 @@ function run_app() {
             foreach ( $wpData["patterns"] as $pattern) {
                 $block_patter_category = wp_insert_term($pattern['category'], 'wp_pattern_category', array('slug' => $pattern['slug']));
 
-                if (!is_wp_error($block_patter_category)) {
-                    foreach ( $pattern["items"] as $item) {
+                foreach ( $pattern["items"] as $item) {
+                    $query =  new \WP_Query([
+                        'name' => $item['post_name'],
+                        'post_type' => $item['post_type'],
+                    ]);
+
+                    if (empty($query->post->post_content)) {
                         $block_pattern_id = wp_insert_post($item);
 
-                        if (!is_error($block_pattern_id)) {
+                        if (!is_wp_error($block_pattern_id)) {
                             add_post_meta($block_pattern_id, 'wp_pattern_sync_status', 'unsynced');
-                            wp_set_object_terms($block_pattern_id, $pattern['slug'], 'wp_pattern_category');
+
+                            if (!is_wp_error($block_patter_category)) {
+                                wp_set_object_terms($block_pattern_id, $pattern['slug'], 'wp_pattern_category');
+                            }
                         }
                     }
-
                 }
             }
         }
@@ -179,27 +167,4 @@ function run_app() {
             }
         }
     }
-
-    //-------------custom plugins configs--------------------------------
-    if(isset($wpFields["plugins_in"])) {
-        foreach ($wpFields["plugins_in"] as $wpField) {
-            Field::setConnectedPlugins($wpField);
-        }
-    }
-}
-
-function my_rest_prepare_post($data, $post) {
-    $_data = $data->data;
-
-    $fields = get_fields($post->ID);
-
-    if (!empty($fields)) {
-        foreach ($fields as $key => $value) {
-            $_data[$key] = get_field($key, $post->ID);
-        }
-    }
-
-    $data->data = $_data;
-
-    return $data;
 }

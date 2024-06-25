@@ -6,6 +6,11 @@ use Wappsnet\Core\Plugin;
 class CopyRights extends Plugin
 {
 	protected function setData() {
-        $this->data['copyRights'] = get_field('copy_rights', 'options');
+        $patterns = new \WP_Query([
+            'name' => 'block-pattern-copy-rights',
+            'post_type' => 'wp_block',
+        ]);
+
+        $this->data['content'] = do_blocks($patterns->post->post_content);
 	}
 }

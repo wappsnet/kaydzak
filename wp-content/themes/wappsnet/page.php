@@ -9,10 +9,16 @@
  *
  * @package wappsnet
  */
+
+use Wappsnet\Core\Render;
+
 get_header();
-\Wappsnet\Core\Render::load_layout('Header');
-\Wappsnet\Core\Render::load_module('Header');
-\Wappsnet\Core\Render::load_module('Page');
-\Wappsnet\Core\Render::load_module('Footer');
-\Wappsnet\Core\Render::load_layout('Footer');
+
+Render::load_layout('Header');
+
+Render::load_module('Header');
+Render::load_layout('Page');
+Render::load_module('Footer');
+
+Render::load_layout('Footer');
 get_footer();

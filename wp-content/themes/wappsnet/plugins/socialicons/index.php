@@ -11,6 +11,6 @@ class SocialIcons extends Plugin
             'post_type' => 'wp_block',
         ]);
 
-        $this->data['icons'] = do_blocks($patterns->post->post_content);
+        $this->data['content'] = do_blocks($patterns->post->post_content);
 	}
 }

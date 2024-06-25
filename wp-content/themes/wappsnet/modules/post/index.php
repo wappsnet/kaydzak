@@ -6,7 +6,8 @@ use Wappsnet\Core\Render;
 
 class Post extends Module
 {
-    protected function setData() {
+    protected function setData(): void
+    {
         global $post;
 
         $this->data['post'] = $post;

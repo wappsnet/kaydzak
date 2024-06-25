@@ -1,3 +1,3 @@
 <div class="plugin-copy-rights">
-    <p>{$copyRights}</p>
+    {$content}
 </div>

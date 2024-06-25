@@ -72,6 +72,13 @@ class Render {
         $layout->init($args);
 	}
 
+	public static function get_layout($layoutName,  $args = false) {
+        $layout = '\Layouts\\'.$layoutName;
+        $layout = new $layout();
+
+        return $layout->init_get($args);
+	}
+
 	public static function load_plugin($pluginName,  $args = false) {
 		$plugin = '\Plugins\\'.$pluginName;
 		$plugin = new $plugin();

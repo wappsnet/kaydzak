@@ -68,13 +68,14 @@ class Blog {
         );
     }
 
-    public static function getPostCategories($postId, $type) {
+    public static function getPostCategories($postId) {
         $categories = wp_get_post_terms($postId, ['category']);
 
         foreach ($categories as $key => $category) {
             $categories[$key] = [
                 'data' => $category,
-                'link' => '/'.$type.'/?category='.$category->slug,
+                'fields' => self::getItemCharacters("category_{$category->term_id}"),
+                'link' => get_category_link($category),
             ];
         }
 

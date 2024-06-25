@@ -1,6 +1,8 @@
 <?php
 namespace Wappsnet\Core;
 
+use DOMDocument;
+
 class Parser {
     public static $config = [];
     public static $notes = [];
@@ -62,8 +64,8 @@ class Parser {
      */
     public static function getThemeLogo() {
         if(empty(self::$config['logo'])) {
-            $customLogoId = get_theme_mod( 'custom_logo' );
-            self::$config['logo'] = wp_get_attachment_image_src( $customLogoId, 'full' );
+            $attachmentId = get_theme_mod( 'custom_logo' );
+            self::$config['logo'] = wp_get_attachment_image_src( $attachmentId, 'full' );
         }
 
         return self::$config['logo'];
@@ -246,5 +248,16 @@ class Parser {
         }
 
         return $children;
+    }
+
+    public static function getBlockDom($html)
+    {
+        $decoded = html_entity_decode($html,ENT_QUOTES, 'UTF-8');
+
+        $doc = new DOMDocument();
+
+        $doc->loadHTML($decoded);
+
+        return $doc;
     }
 }

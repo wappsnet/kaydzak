@@ -1,3 +1,3 @@
 <div class="plugin-social-icons">
-    {$icons}
+    {$content}
 </div>
