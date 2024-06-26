@@ -4,16 +4,18 @@
             <img src="{$post.media.image}" class="card-img-top" alt="{$post.data->post_title}">
         </a>
         <div class="card-body">
-            <h5 class="card-title"><a class="plugin-post__title" href="{$post.link}">{$post.data->post_title}</a></h5>
-            <p class="card-text"><small class="text-muted">{$post.data->post_date}</small></p>
+            <h5 class="card-title plugin-post__title"><a href="{$post.link}">{$post.data->post_title}</a></h5>
             <div class="plugin-post__categories">
                 {foreach from=$post.categories item=category}
                     <a class="plugin-post__categories-item card-link" href="{$category.link}" style="color: {$category.fields.term_color.value};">
-                        <span class="{$category.fields.term_icon.value.type} {$category.fields.term_icon.value.value}"></span>
+                        <span class="wp-svg-icon">
+                            {$category.fields.term_svg.value}
+                        </span>
                         {$category.data->name}
                     </a>
                 {/foreach}
             </div>
+            <a class="plugin-post__author" href="{$post.author->user_url}">{$post.author->display_name}</a>
         </div>
     </div>
 </div>

@@ -25,6 +25,12 @@ class Latest extends Module
             ]);
         }
 
-        $this->data['items'] = $posts;
+        $fractions = array(
+          'main' => array_slice($posts, 0, 2),
+          'primary' => array_slice($posts, 2, 3),
+          'secondary' => array_slice($posts, 4, 4)
+        );
+
+        $this->data['items'] = $fractions;
     }
 }
