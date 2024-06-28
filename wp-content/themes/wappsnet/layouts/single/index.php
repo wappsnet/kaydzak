@@ -12,5 +12,6 @@ class Single extends Layout
         global $post;
 
         $this->data['post'] = Blog::getPostData($post->ID);
+        $this->data['author'] = Render::get_plugin('Author');
     }
 }

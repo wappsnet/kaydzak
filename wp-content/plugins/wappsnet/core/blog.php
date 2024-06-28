@@ -58,7 +58,8 @@ class Blog {
         ];
     }
 
-    public static function getPostAuthor($authorId) {
+    public static function getPostAuthor($authorId): \WP_User|bool
+    {
         return get_user_by('id', $authorId);
     }
 

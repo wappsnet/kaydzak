@@ -23,3 +23,11 @@ add_shortcode( 'wp_categories_list', function($attr) {
 
     return Render::get_module('Categories', $attr);
 });
+
+add_shortcode( 'wp_about_author', function($attr) {
+    global $post;
+
+    $attr = array_merge($attr, ['id' => $post->post_author]);
+
+    return Render::get_module('Author', $attr);
+});

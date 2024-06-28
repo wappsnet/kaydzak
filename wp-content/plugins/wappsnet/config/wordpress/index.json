@@ -110,6 +110,15 @@
           "comment_status": "closed",
           "ping_status": "closed",
           "post_type": "wp_block"
+        },
+        {
+          "post_title": "About Author",
+          "post_name": "block-pattern-about-author",
+          "post_content": "<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|40\",\"margin\":{\"top\":\"var:preset|spacing|40\",\"bottom\":\"var:preset|spacing|40\"}}},\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\" style=\"margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)\"><!-- wp:heading {\"level\":4,\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-secondary\"}}}},\"textColor\":\"color-secondary\"} -->\n<h4 class=\"wp-block-heading has-color-secondary-color has-text-color has-link-color\">ABOUT AUTHOR</h4>\n<!-- /wp:heading -->\n\n<!-- wp:shortcode -->\n[wp_about_author]\n<!-- /wp:shortcode --></div>\n<!-- /wp:group -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
         }
       ]
     }

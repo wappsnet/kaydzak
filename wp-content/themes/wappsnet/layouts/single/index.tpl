@@ -15,5 +15,9 @@
                 </a>
             {/foreach}
         </div>
+        <hr/>
+        <div class="single-page-layout__author">
+           {$author}
+        </div>
     </div>
 </div>
