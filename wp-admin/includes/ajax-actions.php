@@ -4015,7 +4015,6 @@ function wp_ajax_crop_image() {
 	$cropped = wp_crop_image( $attachment_id, $data['x1'], $data['y1'], $data['width'], $data['height'], $data['dst_width'], $data['dst_height'] );
 
 	if ( ! $cropped || is_wp_error( $cropped ) ) {
-        print_r($cropped);
 		wp_send_json_error( array( 'message' => __( 'Image could not be processed.' ) ) );
 	}
 

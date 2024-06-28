@@ -6,6 +6,8 @@
  *
  * @package wappsnet
  */
+
+use Wappsnet\Core\Render;
 ?>
 
 <!DOCTYPE html>
@@ -14,3 +16,5 @@
 <html id="ie9" <?php language_attributes(); ?>>
 <html <?php language_attributes(); ?>>
 <?php wp_head(); ?>
+<?php
+Render::load_module('Header');

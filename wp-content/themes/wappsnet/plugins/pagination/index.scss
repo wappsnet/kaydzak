@@ -2,7 +2,7 @@
   width: 100%;
   float: left;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   .page-numbers {
@@ -13,10 +13,11 @@
     line-height: 28px;
     font-size: 13px;
     font-weight: bold;
-    background: $minor-color;
-    color: $text-primary-color;
+    background: var(--color-stroke);
+    color: var(--color-primary);
     cursor: pointer;
     margin-right: 3px;
+    border-radius: var(--wp-border-radius-xs);
 
     &:last-child {
       margin-right: 0;
@@ -24,18 +25,14 @@
   }
 
   .page-numbers:hover {
-    background: $primary-color;
-    color: $text-secondary-color;
+    background: var(--color-primary);
+    color: var(--color-light);
   }
 
   .page-numbers.current {
-    color: $primary-color;
+    background-color: var(--color-primary);
+    color: var(--color-light);
     font-weight: bold;
-  }
-
-  .page-numbers.current:hover {
-    background: $primary-color;
-    color: $text-secondary-color;
   }
 
   .next {

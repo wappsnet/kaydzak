@@ -263,11 +263,11 @@
           "return_format": "string"
         },
         {
-          "key": "field_6676ca36992f1",
-          "label": "Term Icon",
-          "name": "term_icon",
+          "key": "field_667b3f8aeeef1",
+          "label": "Term Svg",
+          "name": "term_svg",
           "aria-label": "",
-          "type": "icon_picker",
+          "type": "textarea",
           "instructions": "",
           "required": 1,
           "conditional_logic": 0,
@@ -276,17 +276,11 @@
             "class": "",
             "id": ""
           },
-          "tabs": [
-            "dashicons",
-            "media_library",
-            "url"
-          ],
-          "return_format": "array",
-          "library": "all",
-          "default_value": {
-            "type": null,
-            "value": null
-          }
+          "default_value": "",
+          "maxlength": "",
+          "rows": "",
+          "placeholder": "",
+          "new_lines": ""
         }
       ],
       "location": [
@@ -320,14 +314,7 @@
           "type": "image",
           "instructions": "",
           "required": 0,
-          "conditional_logic": [
-            [
-              {
-                "operator": "",
-                "value": ""
-              }
-            ]
-          ],
+          "conditional_logic": 0,
           "wrapper": {
             "width": "",
             "class": "",

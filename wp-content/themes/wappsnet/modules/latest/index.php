@@ -28,7 +28,7 @@ class Latest extends Module
         $fractions = array(
           'main' => array_slice($posts, 0, 2),
           'primary' => array_slice($posts, 2, 3),
-          'secondary' => array_slice($posts, 4, 4)
+          'secondary' => array_slice($posts, 4, 3)
         );
 
         $this->data['items'] = $fractions;

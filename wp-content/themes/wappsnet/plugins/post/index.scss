@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: var(--wp-gap-sm);
 
     .plugin-post__categories-item {
       font-size: 1rem;

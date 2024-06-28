@@ -26,6 +26,26 @@
   --wp-screen-sm: #{$wp-screen-sm};
   --wp-screen-xs: #{$wp-screen-xs};
 
+  //Border Radius
+
+  --wp-border-radius-xl: #{$wp-border-radius-xl};
+  --wp-border-radius-lg: #{$wp-border-radius-lg};
+  --wp-border-radius-md: #{$wp-border-radius-md};
+  --wp-border-radius-sm: #{$wp-border-radius-sm};
+  --wp-border-radius-xs: #{$wp-border-radius-xs};
+
+
+  //Box Shadow
+  --wp-shadow-sm: #{$wp-shadow-sm};
+  --wp-shadow-md: #{$wp-shadow-md};
+  --wp-shadow-lg: #{$wp-shadow-lg};
+
+  .col {
+    &:not(.compact) {
+      padding: #{$grid-gutter-width};
+    }
+  }
+
   .wp-svg-icon {
     color: currentColor;
 
@@ -37,5 +57,20 @@
       overflow: visible;
       box-sizing: content-box;
     }
+  }
+
+  .is-layout-flex {
+    &.is-content-justification-center {
+      justify-content: center;
+    }
+
+    &.is-vertical {
+      flex-direction: column;
+    }
+  }
+
+  hr {
+    border-color: var(--color-stroke);
+    opacity: 1;
   }
 }

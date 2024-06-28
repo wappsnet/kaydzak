@@ -5,13 +5,14 @@ use Wappsnet\Core\Plugin;
 
 class Pagination extends Plugin
 {
-	public static $paginate = Array(
+	public static array $paginate = array(
 		'string' => '?page=%#%',
 		'parser' => '%_%',
 		'this' => 1
 	);
 
-	protected function setData() {
+	protected function setData(): void
+    {
 		$pageItemsCount = 0;
 
 		if(isset($this->args['count'])) {
@@ -49,13 +50,14 @@ class Pagination extends Plugin
 		$this->data['pagination'] = $pagination;
 	}
 
-	public static function getPaginationData($count = false) {
+	public static function getPaginationData($count = false): array
+    {
 		global $wp_query;
 
 		$postPerPage  = get_option('posts_per_page');
 		$pageNumber   = get_query_var('page');
-		$currentPage  = ($pageNumber) ? $pageNumber : 1;
-		$itemsCount   = ($count) ? $count : $wp_query->queried_object->count;
+		$currentPage  = $pageNumber ?? 1;
+		$itemsCount   = $count ?? $wp_query->queried_object->count;
 
 		return [
 			'count' => $itemsCount,

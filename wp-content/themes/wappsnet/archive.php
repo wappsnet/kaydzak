@@ -3,7 +3,15 @@
  * The template for displaying archive category.
  * @package wappsnet
  */
+
+//Template Name: Archive Template
+
+use Wappsnet\Core\Render;
+
 get_header();
-load_module('Header');
-load_module('Footer');
+
+Render::load_layout('Header');
+Render::load_layout('Archive');
+Render::load_layout('Footer');
+
 get_footer();

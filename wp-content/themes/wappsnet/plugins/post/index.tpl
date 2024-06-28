@@ -7,7 +7,7 @@
             <h5 class="card-title plugin-post__title"><a href="{$post.link}">{$post.data->post_title}</a></h5>
             <div class="plugin-post__categories">
                 {foreach from=$post.categories item=category}
-                    <a class="plugin-post__categories-item card-link" href="{$category.link}" style="color: {$category.fields.term_color.value};">
+                    <a class="plugin-post__categories-item" href="{$category.link}" style="color: {$category.fields.term_color.value};">
                         <span class="wp-svg-icon">
                             {$category.fields.term_svg.value}
                         </span>

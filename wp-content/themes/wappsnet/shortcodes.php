@@ -17,3 +17,9 @@ add_shortcode( 'wp_popular_posts', function($attr) {
         'size' => $attr['size'],
     ]);
 });
+
+add_shortcode( 'wp_categories_list', function($attr) {
+    $attr = array_merge($attr, ['taxonomy' => 'category']);
+
+    return Render::get_module('Categories', $attr);
+});

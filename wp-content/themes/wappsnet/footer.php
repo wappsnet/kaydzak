@@ -6,5 +6,10 @@
  *
  * @package wappsnet
  */
+
+use Wappsnet\Core\Render;
+
+Render::load_module('Footer');
 ?>
+
 </html>

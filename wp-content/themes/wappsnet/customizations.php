@@ -21,6 +21,6 @@ add_action('customize_register', function ($wp_customize) {
     }
 });
 
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('dashicons');
+add_action( 'after_setup_theme', function() {
+    add_theme_support( 'wp-block-styles' );
 });

@@ -28,7 +28,8 @@ class Blog {
         return self::$getCategoriesHtml;
     }
 
-    public static function getPostData($postId) {
+    public static function getPostData($postId): array
+    {
         $postData = get_post($postId);
 
         //item media -------------------------------------
@@ -36,7 +37,7 @@ class Blog {
         //item media -------------------------------------
 
         //item category--------------------------------------
-        $postCategories = self::getPostCategories($postId, $postData->post_type);
+        $postCategories = self::getPostCategories($postId);
         //item category--------------------------------------
 
         //item author--------------------------------------
@@ -99,7 +100,8 @@ class Blog {
         return get_posts($arguments);
     }
 
-    public static function getItemCharacters($itemId) {
+    public static function getItemCharacters($itemId): array
+    {
         $fields = get_fields($itemId);
         $characters = [];
 
