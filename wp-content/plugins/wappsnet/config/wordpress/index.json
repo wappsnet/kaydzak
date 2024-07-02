@@ -1,25 +1,26 @@
 {
   "menus": {
-    "primary": "primary",
-    "secondary": "secondary"
+    "header": "header",
+    "canvas": "canvas",
+    "footer": "footer"
   },
   "post_types": [
     {
-      "name": "news",
-      "rest_name": "news",
+      "name": "people",
+      "rest_name": "people",
       "params": {
         "labels": {
-          "name": "News",
-          "singular_name": "Article"
+          "name": "People",
+          "singular_name": "People"
         },
         "public": true,
-        "menu_icon": "dashicons-format-image",
+        "menu_icon": "dashicons-groups",
         "has_archive": true,
         "show_ui": true,
         "hierarchical": false,
         "show_in_rest": true,
         "taxonomies": [
-          "category"
+          "department"
         ],
         "supports": [
           "title",
@@ -37,8 +38,7 @@
     {
       "name": "category",
       "settings": [
-        "post",
-        "news"
+        "post"
       ],
       "params": {
         "label": "Categories",
@@ -48,6 +48,23 @@
         "show_in_rest": true,
         "rewrite": {
           "slug": "category",
+          "hierarchical": true
+        }
+      }
+    },
+    {
+      "name": "department",
+      "settings": [
+        "people"
+      ],
+      "params": {
+        "label": "Departments",
+        "meta_box_cb": "post_categories_meta_box",
+        "hierarchical": true,
+        "query_var": true,
+        "show_in_rest": true,
+        "rewrite": {
+          "slug": "department",
           "hierarchical": true
         }
       }
@@ -114,7 +131,7 @@
         {
           "post_title": "About Author",
           "post_name": "block-pattern-about-author",
-          "post_content": "<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|40\",\"margin\":{\"top\":\"var:preset|spacing|40\",\"bottom\":\"var:preset|spacing|40\"}}},\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\" style=\"margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)\"><!-- wp:heading {\"level\":4,\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-secondary\"}}}},\"textColor\":\"color-secondary\"} -->\n<h4 class=\"wp-block-heading has-color-secondary-color has-text-color has-link-color\">ABOUT AUTHOR</h4>\n<!-- /wp:heading -->\n\n<!-- wp:shortcode -->\n[wp_about_author]\n<!-- /wp:shortcode --></div>\n<!-- /wp:group -->",
+          "post_content": "<!-- wp:group {\"style\":{\"spacing\":{\"padding\":{\"top\":\"var:preset|spacing|40\",\"bottom\":\"var:preset|spacing|40\",\"left\":\"var:preset|spacing|40\",\"right\":\"var:preset|spacing|40\"},\"margin\":{\"top\":\"var:preset|spacing|40\",\"bottom\":\"var:preset|spacing|40\"}}},\"backgroundColor\":\"color-stroke\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\"}} -->\n<div class=\"wp-block-group has-color-stroke-background-color has-background\" style=\"margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)\"><!-- wp:heading {\"level\":5,\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-secondary\"}}}},\"textColor\":\"color-secondary\"} -->\n<h5 class=\"wp-block-heading has-color-secondary-color has-text-color has-link-color\">ABOUT AUTHOR</h5>\n<!-- /wp:heading --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\"}} -->\n<div class=\"wp-block-group\"><!-- wp:shortcode -->\n[wp_about_author]\n<!-- /wp:shortcode --></div>\n<!-- /wp:group -->",
           "post_status": "publish",
           "comment_status": "closed",
           "ping_status": "closed",

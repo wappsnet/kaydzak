@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
-                {foreach from=$menu item=menuItem}
+                {foreach from=$menu.header item=menuItem}
                     {if !$menuItem->menu_item_parent}
                         <li class="nav-item">
                             <a  class="nav-link" href="{$menuItem->url}">
@@ -22,24 +22,14 @@
     </div>
 </nav>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasRightLabel" id="secondary-nav">
-    <div class="offcanvas-header layout-header">
+<div class="layout-canvas offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasRightLabel" id="secondary-nav">
+    <div class="offcanvas-header layout-canvas__header">
         <a class="navbar-brand" href="/">
             <img src="{$logo}" alt="${$title}" width="auto" height="35">
         </a>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        <ul class="navbar-nav">
-            {foreach from=$menu item=menuItem}
-                {if !$menuItem->menu_item_parent}
-                    <li class="nav-item">
-                        <a  class="nav-link" href="{$menuItem->url}">
-                            {$menuItem->title}
-                        </a>
-                    </li>
-                {/if}
-            {/foreach}
-        </ul>
+    <div class="layout-canvas__body offcanvas-body">
+        {$menu.canvas}
     </div>
 </div>

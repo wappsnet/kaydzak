@@ -22,7 +22,7 @@ require_once (WAPPSNET_PATH."/autoload.php");
 require_once(WAPPSNET_PATH."/fields/acf.php");
 
 //add admin actions
-add_action( 'init', 'runApp' );
+add_action( 'init', 'runApp', 1 );
 
 function runApp(): void
 {
