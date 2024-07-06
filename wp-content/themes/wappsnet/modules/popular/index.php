@@ -6,12 +6,14 @@ use Wappsnet\Core\Render;
 
 class Popular extends Module {
     protected $args = [
-        'count' => 9
+        'size' => 6
     ];
 
-    protected function setData() {
+    protected function setData(): void
+    {
         $posts = get_posts([
-            "numberposts" => $this->args['count'],
+            "numberposts" => $this->args['size'],
+            "orderby" => "wpb_post_views_count",
             "fields" => "ids",
             "post_type" => "post"
         ]);
@@ -21,8 +23,6 @@ class Popular extends Module {
                 "id" => $postId,
             ]);
         }
-
-        print_r($posts);
 
         $this->data['items'] = $posts;
     }

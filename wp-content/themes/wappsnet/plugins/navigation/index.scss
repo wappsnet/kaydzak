@@ -4,4 +4,15 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  color: currentColor;
+
+  .nav-item {
+    .nav-link {
+      color: currentColor;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

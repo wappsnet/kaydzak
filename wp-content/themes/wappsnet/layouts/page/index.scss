@@ -1,0 +1,15 @@
+.common-page-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--wp-gap-lg);
+  margin: var(--wp-gap-lg) auto;
+
+  .common-page-layout__header {
+    width: 100%;
+  }
+
+  .common-page-layout__content {
+    width: 100%;
+  }
+}

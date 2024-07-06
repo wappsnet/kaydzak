@@ -14,7 +14,7 @@
     .wp-canvas-menu {
       width: 100%;
       margin: 0;
-      padding: 0;
+      padding: var(--wp-gap-md);
       list-style: none;
       background-color: var(--color-secondary);
 
@@ -52,7 +52,6 @@
         margin: 0;
         background-color: var(--color-secondary);
         padding-left: var(--wp-gap-lg);
-        border: 1px solid rgba(0, 0, 0, 0.05);
       }
     }
   }

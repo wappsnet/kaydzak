@@ -62,7 +62,7 @@
           "slug": "color-danger"
         },
         {
-          "color": "#F8F9FAFF",
+          "color": "#ffffff",
           "name": "Light Color",
           "slug": "color-light"
         },
@@ -80,6 +80,31 @@
           "color": "#f9f9f9",
           "name": "Header Color",
           "slug": "color-header"
+        },
+        {
+          "color": "#333333",
+          "name": "Header Text Color",
+          "slug": "color-header-text"
+        },
+        {
+          "color": "#000000",
+          "name": "Header Link Color",
+          "slug": "color-header-link"
+        },
+        {
+          "color": "#f9f9f9",
+          "name": "Footer Color",
+          "slug": "color-footer"
+        },
+        {
+          "color": "#333333",
+          "name": "Footer Text Color",
+          "slug": "color-footer-text"
+        },
+        {
+          "color": "#000000",
+          "name": "Footer Link Color",
+          "slug": "color-footer-link"
         }
       ],
       "text": true

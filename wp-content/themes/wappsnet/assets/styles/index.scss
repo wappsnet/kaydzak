@@ -18,6 +18,9 @@
   --color-dark: #{$color-dark};
   --color-stroke: #{$color-stroke};
   --color-header: #{$color-header};
+  --color-header-text: #{$color-header-text};
+  --color-footer: #{$color-footer};
+  --color-footer-text: #{$color-footer-text};
 
   //BreakPoints
   --wp-screen-xl: #{$wp-screen-xl};
@@ -59,7 +62,15 @@
     }
   }
 
+  .wp-block-group-is-layout-flex,
   .is-layout-flex {
+    width: 100%;
+    gap: var(--wp-gap-sm);
+
+    &.is-nowrap {
+      flex-wrap: nowrap;
+    }
+
     &.is-content-justification-center {
       justify-content: center;
     }
@@ -67,6 +78,10 @@
     &.is-vertical {
       flex-direction: column;
       align-items: unset;
+
+      &.is-content-justification-center {
+        align-items: center;
+      }
     }
   }
 

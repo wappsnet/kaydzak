@@ -1,7 +1,5 @@
 <?php
 
-use Wappsnet\Core\Blog;
-
 define("THEME_PATH", __DIR__);
 
 add_action('customize_register', function ($wp_customize) {
@@ -23,11 +21,6 @@ add_action('customize_register', function ($wp_customize) {
         $wp_customize->add_control($wp_control);
     }
 });
-
-add_action( 'after_setup_theme', function() {
-    add_theme_support( 'wp-block-styles' );
-});
-
 
 add_action('user_register', function ($id) {
     $user = get_userdata( $id );

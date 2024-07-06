@@ -1,4 +1,4 @@
-<ul class="plugin-navigation nav justify-content-center">
+<ul class="plugin-navigation nav">
     {foreach from=$menu item=menuItem}
         {if !$menuItem->menu_item_parent}
             <li class="nav-item">
