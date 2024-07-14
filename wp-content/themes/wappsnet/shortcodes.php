@@ -28,6 +28,12 @@ add_shortcode( 'wp_categories_list', function($attr) {
     return Render::get_module('Categories', $attr);
 });
 
+add_shortcode( 'wp_contribution_areas', function($attr) {
+    $attr = array_merge($attr, ['taxonomy' => 'category']);
+
+    return Render::get_module('Contribution', $attr);
+});
+
 add_shortcode( 'wp_about_author', function($attr) {
     global $post;
 

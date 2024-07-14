@@ -4,7 +4,7 @@ namespace Modules;
 use Wappsnet\Core\Blog;
 use Wappsnet\Core\Module;
 
-class Categories extends Module
+class Contribution extends Module
 {
     protected $args = array(
         'taxonomy' => 'category',
@@ -14,10 +14,13 @@ class Categories extends Module
     {
         $arguments = array(
             'taxonomy' => $this->args['taxonomy'],
-            'include' => 'all'
+            'include' => 'all',
+            'hide_empty' => false,
         );
 
-        $categories = get_categories($arguments);
+        $categories = array_filter(get_categories($arguments), function ($item) {
+            return !empty($item->description);
+        });
 
         foreach ($categories as $key => $category) {
             $categories[$key] = [
