@@ -2,6 +2,7 @@
 namespace Layouts;
 
 use Wappsnet\Core\Layout;
+use Wappsnet\Core\Parser;
 
 class Header extends Layout
 {
@@ -10,6 +11,7 @@ class Header extends Layout
 
         $this->data["menu"] = [
             'header' => wp_get_nav_menu_items("header"),
+            'secondary' => wp_get_nav_menu_items("secondary"),
             'canvas' => wp_nav_menu([
                 "menu" => "canvas",
                 "depth" => 2,
@@ -17,7 +19,8 @@ class Header extends Layout
                 "menu_class" => "wp-canvas-menu"
             ]),
         ];
-        $this->data["logo"] = get_header_image();
+        $this->data["image"] = Parser::getThemeImage();
+        $this->data["logo"] = Parser::getThemeLogo();
         $this->data["title"] = get_bloginfo('name');
     }
 }

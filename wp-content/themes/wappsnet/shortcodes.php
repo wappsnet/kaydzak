@@ -18,28 +18,33 @@ add_shortcode( 'wp_popular_posts', function($attr) {
     ]);
 });
 
-add_shortcode( 'wp_contributors', function() {
-    return Render::get_module('Contributors');
+add_shortcode( 'wp_board', function($attr) {
+    $attr = array_merge(['slug' => ''], $attr);
+
+    return Render::get_module('Board', [
+        'slug' => $attr['slug'],
+    ]);
 });
 
-add_shortcode( 'wp_categories_list', function($attr) {
+add_shortcode( 'wp_explore', function($attr) {
+    $attr = array_merge($attr, [
+        'taxonomy' => 'category',
+        'posts_per_page' => 3
+    ]);
+
+    return Render::get_module('Explore', $attr);
+});
+
+add_shortcode( 'wp_categories', function($attr) {
     $attr = array_merge($attr, ['taxonomy' => 'category']);
 
     return Render::get_module('Categories', $attr);
 });
 
-add_shortcode( 'wp_contribution_areas', function($attr) {
+add_shortcode( 'wp_areas', function($attr) {
     $attr = array_merge($attr, ['taxonomy' => 'category']);
 
-    return Render::get_module('Contribution', $attr);
-});
-
-add_shortcode( 'wp_about_author', function($attr) {
-    global $post;
-
-    $attr = array_merge($attr, ['id' => $post->post_author]);
-
-    return Render::get_module('Author', $attr);
+    return Render::get_module('Areas', $attr);
 });
 
 add_shortcode( 'wp_navigation', function($attr) {

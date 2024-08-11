@@ -6,7 +6,8 @@
         </h1>
         <hr/>
         {if !empty($category.data->description)}
-            <p>$category.data->description</p>
+            <p>{$category.data->description}</p>
+            <hr/>
         {/if}
 
         <div class="row">

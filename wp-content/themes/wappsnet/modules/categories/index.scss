@@ -5,53 +5,60 @@
   gap: var(--wp-gap-sm);
   padding: var(--wp-gap-sm);
 
-  .module-category__item {
+  .module-category__wrapper {
     width: 100%;
-    min-width: 150px;
-    aspect-ratio: 1/1;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--wp-gap-sm);
-    gap: var(--wp-gap-md);
-    text-decoration: none;
-    color: currentColor;
-    border-radius: var(--wp-border-radius-sm);
-    background-color: var(--color-light);
-    box-shadow: var(--wp-shadow-sm);
-    transition: all 0.3s ease-in-out;
+    padding: var(--wp-gap-lg);
 
-    &:hover {
-      background-color: currentColor;
-      transform: scale(1.05);
+    .module-category__item {
+      width: 100%;
+      min-width: 150px;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--wp-gap-lg);
+      gap: var(--wp-gap-md);
+      text-decoration: none;
+      color: currentColor;
+      border-radius: var(--wp-border-radius-sm);
+      background-color: var(--color-light);
+      box-shadow: var(--wp-shadow-md);
+      transition: all 0.3s ease-in-out;
 
-      .module-category__item-label {
-        color: var(--color-light);
+      &:hover {
+        background-color: currentColor;
+        transform: scale(1.05);
+
+        .module-category__item-label {
+          color: var(--color-light);
+        }
+
+        .module-category__item-icon {
+          color: var(--color-light);
+        }
       }
 
       .module-category__item-icon {
-        color: var(--color-light);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: currentColor;
       }
-    }
 
-    .module-category__item-icon {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
-      font-weight: bold;
-      color: currentColor;
-    }
-
-    .module-category__item-label {
-      width: 100%;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 1rem;
-      color: currentColor;
+      .module-category__item-label {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1rem;
+        color: currentColor;
+      }
     }
   }
 }

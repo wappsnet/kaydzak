@@ -1,9 +1,11 @@
 {
-  "version": 3,
+  "$schema": "https://schemas.wp.org/wp/6.5/theme.json",
+  "version": 2,
   "patterns": [
     "wappsnet_popular_posts"
   ],
   "settings": {
+    "appearanceTools": true,
     "border": {
       "color": true,
       "radius": true,
@@ -15,14 +17,6 @@
     },
     "position": {
       "sticky": true
-    },
-    "spacing": {
-      "blockGap": true,
-      "margin": true,
-      "padding": true
-    },
-    "typography": {
-      "lineHeight": true
     },
     "color": {
       "background": true,
@@ -108,6 +102,144 @@
         }
       ],
       "text": true
-    }
+    },
+    "layout": {
+      "contentSize": "620px",
+      "wideSize": "1280px"
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 1
+      },
+      "spacingSizes": [
+        {
+          "name": "1",
+          "size": "1rem",
+          "slug": "10"
+        },
+        {
+          "name": "2",
+          "size": "min(1.5rem, 2vw)",
+          "slug": "20"
+        },
+        {
+          "name": "3",
+          "size": "min(2.5rem, 3vw)",
+          "slug": "30"
+        },
+        {
+          "name": "4",
+          "size": "min(4rem, 5vw)",
+          "slug": "40"
+        },
+        {
+          "name": "5",
+          "size": "min(6.5rem, 8vw)",
+          "slug": "50"
+        },
+        {
+          "name": "6",
+          "size": "min(10.5rem, 13vw)",
+          "slug": "60"
+        }
+      ],
+      "units": ["%", "px", "em", "rem", "vh", "vw"]
+    },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Roboto",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "src": ["file:./assets/fonts/roboto/Roboto-Regular.woff2"]
+            },
+            {
+              "fontFamily": "Roboto",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "src": ["file:./assets/fonts/roboto/Roboto-Bold.woff2"]
+            }
+          ],
+          "fontFamily": "Roboto",
+          "name": "Roboto",
+          "slug": "roboto"
+        },
+        {
+          "fontFace": [
+            {
+              "fontFamily": "Gotham",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "src": ["file:./assets/fonts/gotham/Gotham-Black.woff2"]
+            },
+            {
+              "fontFamily": "Gotham",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "src": ["file:./assets/fonts/gotham/Gotham-Black.woff2"]
+            }
+          ],
+          "fontFamily": "Gotham",
+          "name": "Gotham",
+          "slug": "gotham"
+        },
+        {
+          "fontFamily": "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif",
+          "name": "System Sans-serif",
+          "slug": "system-sans-serif"
+        },
+        {
+          "fontFamily": "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+          "name": "System Serif",
+          "slug": "system-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "fluid": false,
+          "name": "Small",
+          "size": "0.9rem",
+          "slug": "small"
+        },
+        {
+          "fluid": false,
+          "name": "Medium",
+          "size": "1.05rem",
+          "slug": "medium"
+        },
+        {
+          "fluid": {
+            "min": "1.39rem",
+            "max": "1.85rem"
+          },
+          "name": "Large",
+          "size": "1.85rem",
+          "slug": "large"
+        },
+        {
+          "fluid": {
+            "min": "1.85rem",
+            "max": "2.5rem"
+          },
+          "name": "Extra Large",
+          "size": "2.5rem",
+          "slug": "x-large"
+        },
+        {
+          "fluid": {
+            "min": "2.5rem",
+            "max": "3.27rem"
+          },
+          "name": "Extra Extra Large",
+          "size": "3.27rem",
+          "slug": "xx-large"
+        }
+      ],
+      "writingMode": true
+    },
+    "useRootPaddingAwareAlignments": true
   }
 }

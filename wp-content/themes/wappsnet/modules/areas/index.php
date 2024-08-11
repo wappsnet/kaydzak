@@ -4,7 +4,7 @@ namespace Modules;
 use Wappsnet\Core\Blog;
 use Wappsnet\Core\Module;
 
-class Contribution extends Module
+class Areas extends Module
 {
     protected $args = array(
         'taxonomy' => 'category',
@@ -14,7 +14,10 @@ class Contribution extends Module
     {
         $arguments = array(
             'taxonomy' => $this->args['taxonomy'],
+            'type' => 'post',
+            'order' => 'DESC',
             'include' => 'all',
+            'pad_counts' => false,
             'hide_empty' => false,
         );
 

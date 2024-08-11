@@ -6,7 +6,7 @@ use Wappsnet\Core\Render;
 
 class Popular extends Module {
     protected $args = [
-        'size' => 6
+        'size' => 12
     ];
 
     protected function setData(): void

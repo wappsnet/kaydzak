@@ -1,11 +1,11 @@
-.module-contribution {
+.module-areas {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--wp-gap-sm);
   padding: var(--wp-gap-sm);
 
-  .module-contribution__area {
+  .module-areas__item {
     width: 100%;
     display: flex;
     gap: var(--wp-gap-md);
@@ -16,7 +16,7 @@
       border-bottom: 1px solid var(--color-stroke);
     }
 
-    .module-contribution__area-icon {
+    .module-areas__item-icon {
       width: 7rem;
       font-size: 2rem;
       display: flex;
@@ -27,13 +27,13 @@
       background-color: var(--color-stroke);
     }
 
-    .module-contribution__area-content {
+    .module-areas__item-content {
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: var(--wp-gap-sm);
 
-      .module-contribution__area-title {
+      .module-areas__item-title {
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -41,7 +41,7 @@
         gap: var(--wp-gap-sm);
       }
 
-      .module-contribution__area-description {
+      .module-areas__item-description {
 
       }
     }

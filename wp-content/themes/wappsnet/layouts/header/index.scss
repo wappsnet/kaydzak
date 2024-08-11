@@ -1,6 +1,66 @@
 .layout-header {
   background-color: var(--color-header);
   color: var(--color-header-menu);
+
+  .layout-header__navbar {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .layout-header__navbar-menu {
+      overflow: hidden;
+
+      &.header-menu {
+        justify-content: flex-start;
+      }
+
+      &.secondary-menu {
+        justify-content: flex-end;
+      }
+
+      .navbar-nav {
+        overflow: hidden;
+      }
+    }
+
+    .layout-header__logo {
+      margin: 0;
+    }
+
+    .nav-item {
+      overflow: hidden;
+
+      .nav-link {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .layout-header__image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--wp-gap-sm);
+    position: relative;
+
+    .layout-header__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 120px;
+      height: 1em;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      background-color: var(--color-light);
+      padding: 0.1em;
+      margin: -0.2em 0;
+      transition: all 0.2s ease-in-out;
+    }
+  }
 }
 
 .layout-canvas {
@@ -14,6 +74,9 @@
     .wp-canvas-menu {
       width: 100%;
       margin: 0;
+      display: flex;
+      flex-direction: column;;
+      gap: var(--wp-gap-sm);
       padding: var(--wp-gap-md);
       list-style: none;
       background-color: var(--color-secondary);
@@ -21,12 +84,8 @@
       li {
         width: 100%;
         padding: 0;
-
-        &:not(:last-child) {
-          a {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-          }
-        }
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: var(--wp-border-radius-xs);
 
         a {
           width: 100%;
@@ -35,6 +94,9 @@
           padding: var(--wp-gap-sm) var(--wp-gap-md);
           color: var(--color-dark);
           text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+          border-radius: inherit;
 
           &[aria-current="page"] {
             background-color: rgba(0, 0, 0, 0.05);
@@ -48,10 +110,20 @@
 
       ul {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--wp-gap-xs);
         list-style: none;
         margin: 0;
         background-color: var(--color-secondary);
-        padding-left: var(--wp-gap-lg);
+        padding: var(--wp-gap-md);
+
+        li {
+          a {
+            font-weight: normal;
+            font-size: 0.875rem;
+          }
+        }
       }
     }
   }

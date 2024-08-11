@@ -1,7 +1,11 @@
 <?php
 /**
- * Wappsnet engine room
+ * Wappsnet functions and definitions
  * @package wappsnet
+ */
+
+/**
+ * Register block styles.
  */
 
 require_once 'shortcodes.php';
