@@ -3,7 +3,7 @@
 use Wappsnet\Core\Render;
 
 add_shortcode( 'wp_latest_posts', function($attr) {
-    $attr = array_merge($attr, ['size' => 9]);
+    $attr = array_merge($attr, ['size' => 5]);
 
     return Render::get_module('Latest', [
         'size' => $attr['size'],
@@ -11,7 +11,7 @@ add_shortcode( 'wp_latest_posts', function($attr) {
 });
 
 add_shortcode( 'wp_popular_posts', function($attr) {
-    $attr = array_merge($attr, ['size' => 6]);
+    $attr = array_merge($attr, ['size' => 8]);
 
     return Render::get_module('Popular', [
         'size' => $attr['size'],

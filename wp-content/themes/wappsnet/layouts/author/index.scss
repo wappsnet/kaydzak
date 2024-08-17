@@ -5,6 +5,28 @@
   gap: var(--wp-gap-lg);
   margin: var(--wp-gap-lg) auto;
 
+  .author-page-layout__media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+  }
+
+  .author-page-layout__title {
+    text-align: center;
+  }
+
+  .author-page-layout__departments {
+    width: 100%;
+  }
+
   .author-page-layout__content {
     width: 100%;
   }

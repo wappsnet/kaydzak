@@ -31,7 +31,7 @@
       "link": true,
       "palette": [
         {
-          "color": "#0D6EFDFF",
+          "color": "#48b8e0",
           "name": "Primary Color",
           "slug": "color-primary"
         },
@@ -81,22 +81,22 @@
           "slug": "color-header-text"
         },
         {
-          "color": "#000000",
+          "color": "#333333",
           "name": "Header Link Color",
           "slug": "color-header-link"
         },
         {
-          "color": "#f9f9f9",
+          "color": "#323232",
           "name": "Footer Color",
           "slug": "color-footer"
         },
         {
-          "color": "#333333",
+          "color": "#ffffff",
           "name": "Footer Text Color",
           "slug": "color-footer-text"
         },
         {
-          "color": "#000000",
+          "color": "#ffffff",
           "name": "Footer Link Color",
           "slug": "color-footer-link"
         }
@@ -172,14 +172,14 @@
             {
               "fontFamily": "Gotham",
               "fontStyle": "normal",
-              "fontWeight": "400",
+              "fontWeight": "normal",
               "src": ["file:./assets/fonts/gotham/Gotham-Black.woff2"]
             },
             {
               "fontFamily": "Gotham",
               "fontStyle": "normal",
-              "fontWeight": "700",
-              "src": ["file:./assets/fonts/gotham/Gotham-Black.woff2"]
+              "fontWeight": "bold",
+              "src": ["file:./assets/fonts/gotham/Gotham-Black-Bold.woff2"]
             }
           ],
           "fontFamily": "Gotham",

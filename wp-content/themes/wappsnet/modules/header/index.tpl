@@ -17,11 +17,6 @@
 
     <!--app scripts links-->
     <link rel="stylesheet" href="{$scripts['css']}"/>
-
-    <!--app additional settings-->
-    <style>
-        {$styles}
-    </style>
 </head>
 
 <body class="{$class}">

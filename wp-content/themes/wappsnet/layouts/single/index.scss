@@ -13,9 +13,29 @@
     gap: var(--wp-gap-sm);
 
     .single-page-layout__categories-item {
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 0.875rem;
+      padding: var(--wp-gap-xs) var(--wp-gap-sm);
       text-decoration: none;
+      border-radius: var(--wp-border-radius-sm);
+      color: var(--color-light);
+
+      &:hover {
+        box-shadow: var(--wp-shadow-sm);
+      }
     }
+  }
+
+  .single-page-layout__media {
+    width: 100%;
+    padding: var(--wp-gap-xl);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .single-page-layout__content {
+    padding: var(--wp-gap-xl);
   }
 }

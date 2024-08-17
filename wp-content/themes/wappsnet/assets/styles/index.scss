@@ -2,6 +2,10 @@
 @import "partials/variables";
 
 :root {
+  &.freeze {
+    overflow: hidden;
+  }
+
   //Sizes
   --wp-gap-xs: #{$wp-gap-xs};
   --wp-gap-sm: #{$wp-gap-sm};
@@ -20,8 +24,10 @@
   --color-stroke: #{$color-stroke};
   --color-header: #{$color-header};
   --color-header-text: #{$color-header-text};
+  --color-header-link: #{$color-header-link};
   --color-footer: #{$color-footer};
   --color-footer-text: #{$color-footer-text};
+  --color-footer-link: #{$color-footer-link};
 
   //BreakPoints
   --wp-screen-xl: #{$wp-screen-xl};
@@ -58,7 +64,7 @@
       height: 1em;
       width: 1em;
       fill: currentColor;
-      vertical-align: -0.2em;
+      vertical-align: -0.1em;
       overflow: visible;
       box-sizing: content-box;
     }

@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Gotham;
+    src: url('./gotham/Gotham-Black.woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url('./gotham/Gotham-Black-Bold.woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('./roboto/Roboto-Regular.woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('./roboto/Roboto-Bold.woff2');
+    font-weight: bold;
+}

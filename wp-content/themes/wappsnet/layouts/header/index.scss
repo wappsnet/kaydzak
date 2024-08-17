@@ -1,23 +1,27 @@
 .layout-header {
   background-color: var(--color-header);
   color: var(--color-header-menu);
+  flex-wrap: nowrap;
+  z-index: 1;
 
   .layout-header__navbar {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
+    gap: var(--wp-gap-sm);
+
+    &.left-menu {
+      justify-content: flex-start;
+    }
+
+    &.right-menu {
+      justify-content: flex-end;
+    }
 
     .layout-header__navbar-menu {
       overflow: hidden;
-
-      &.header-menu {
-        justify-content: flex-start;
-      }
-
-      &.secondary-menu {
-        justify-content: flex-end;
-      }
+      justify-content: inherit;
 
       .navbar-nav {
         overflow: hidden;
@@ -65,6 +69,9 @@
 
 .layout-canvas {
   .layout-canvas__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--color-header);
   }
 
@@ -79,7 +86,7 @@
       gap: var(--wp-gap-sm);
       padding: var(--wp-gap-md);
       list-style: none;
-      background-color: var(--color-secondary);
+      background-color: var(--color-light);
 
       li {
         width: 100%;
@@ -115,7 +122,7 @@
         gap: var(--wp-gap-xs);
         list-style: none;
         margin: 0;
-        background-color: var(--color-secondary);
+        background-color: var(--color-light);
         padding: var(--wp-gap-md);
 
         li {
@@ -123,6 +130,67 @@
             font-weight: normal;
             font-size: 0.875rem;
           }
+        }
+      }
+    }
+  }
+}
+
+.layout-search-popup {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--color-header);
+  z-index: 1;
+
+  &:not(.show) {
+    display: none;
+  }
+
+  .layout-search-popup__header {
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding: var(--wp-gap-lg);
+  }
+
+  .layout-search-popup__body {
+    width: 100%;
+    flex: 1;
+    height: auto;
+    overflow-y: auto;
+
+    .layout-search-popup__form {
+      width: 100%;
+      display: flex;
+      position: relative;
+      padding: var(--wp-gap-lg);
+
+      .layout-search-popup__form-wrapper {
+        width: 100%;
+        display: flex;
+        position: relative;
+
+        .layout-search-popup__form-icon {
+          position: absolute;
+          height: 100%;
+          aspect-ratio: 1 / 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .layout-search-popup__form-input {
+          padding-left: 3rem;
+          height: 2.5rem;
+          width: 100%;
+          border-radius: var(--wp-border-radius-xs);
         }
       }
     }

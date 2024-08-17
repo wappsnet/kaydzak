@@ -10,15 +10,16 @@ class Header extends Layout
     {
 
         $this->data["menu"] = [
-            'header' => wp_get_nav_menu_items("header"),
-            'secondary' => wp_get_nav_menu_items("secondary"),
+            'primary' => wp_get_nav_menu_items("Primary"),
+            'secondary' => wp_get_nav_menu_items("Secondary"),
             'canvas' => wp_nav_menu([
-                "menu" => "canvas",
+                "menu" => "Canvas",
                 "depth" => 2,
                 "echo" => false,
                 "menu_class" => "wp-canvas-menu"
             ]),
         ];
+        $this->data["icons"] = Parser::getSvgIcons();
         $this->data["image"] = Parser::getThemeImage();
         $this->data["logo"] = Parser::getThemeLogo();
         $this->data["title"] = get_bloginfo('name');

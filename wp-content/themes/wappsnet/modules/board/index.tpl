@@ -16,7 +16,7 @@
                             {', '|implode:$item.terms}
                         </h6>
                         <div class="module-board__item-content">
-                            {$item.user->description}
+                            {$item.user->description|truncate:150:"..."}
                         </div>
                     </div>
                 </div>

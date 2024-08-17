@@ -21,9 +21,13 @@ class Author extends Layout
 
         $people = $posts[0];
 
+        $data = Blog::getPostData($people->ID, ['department']);
         $author = array(
             'data' => $user,
-            'post' => Blog::getPostData($people->ID, ['department'])
+            'post' => $data,
+            'terms' => array_map(function($term) {
+                return $term->name;
+            }, $data['terms']),
         );
 
         $args = [
