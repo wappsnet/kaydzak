@@ -1,0 +1,31 @@
+.layout-search {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--color-header);
+  z-index: 1;
+
+  &:not(.show) {
+    display: none;
+  }
+
+  .layout-search__header {
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding: var(--wp-gap-lg);
+  }
+
+  .layout-search__body {
+    width: 100%;
+    flex: 1;
+    height: auto;
+    overflow-y: auto;
+  }
+}

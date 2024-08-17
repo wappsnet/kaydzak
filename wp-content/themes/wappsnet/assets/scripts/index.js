@@ -5,7 +5,7 @@ window.addEventListener('scroll', (e) => {
 
   if (headerIcon) {
     const minSize = 50;
-    const maxSize = 120;
+    const maxSize = 150;
 
     const newSize = Math.max(Math.min(maxSize, maxSize - window.scrollY), minSize);
 

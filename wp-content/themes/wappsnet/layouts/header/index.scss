@@ -55,12 +55,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 120px;
+      font-size: 150px;
       height: 1em;
       aspect-ratio: 1/1;
       border-radius: 100%;
       background-color: var(--color-light);
-      padding: 0.1em;
+      padding: 0.2em;
       margin: -0.2em 0;
       transition: all 0.2s ease-in-out;
     }
@@ -73,6 +73,22 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-header);
+
+    .layout-canvas__brand {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: var(--wp-gap-sm);
+
+      .layout-canvas__title {
+        font-size: 32px;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--color-primary);
+      }
+    }
   }
 
   .layout-canvas__body {
@@ -130,67 +146,6 @@
             font-weight: normal;
             font-size: 0.875rem;
           }
-        }
-      }
-    }
-  }
-}
-
-.layout-search-popup {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transition: all 0.3s ease-in-out;
-  background-color: var(--color-header);
-  z-index: 1;
-
-  &:not(.show) {
-    display: none;
-  }
-
-  .layout-search-popup__header {
-    width: 100%;
-    display: flex;
-    flex-shrink: 0;
-    justify-content: flex-end;
-    padding: var(--wp-gap-lg);
-  }
-
-  .layout-search-popup__body {
-    width: 100%;
-    flex: 1;
-    height: auto;
-    overflow-y: auto;
-
-    .layout-search-popup__form {
-      width: 100%;
-      display: flex;
-      position: relative;
-      padding: var(--wp-gap-lg);
-
-      .layout-search-popup__form-wrapper {
-        width: 100%;
-        display: flex;
-        position: relative;
-
-        .layout-search-popup__form-icon {
-          position: absolute;
-          height: 100%;
-          aspect-ratio: 1 / 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .layout-search-popup__form-input {
-          padding-left: 3rem;
-          height: 2.5rem;
-          width: 100%;
-          border-radius: var(--wp-border-radius-xs);
         }
       }
     }

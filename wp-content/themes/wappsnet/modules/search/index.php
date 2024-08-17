@@ -2,12 +2,13 @@
 namespace Modules;
 
 use Wappsnet\Core\Module;
+use Wappsnet\Core\Parser;
 
 class Search extends Module
 {
-	protected function setData() {
-        $this->data['primaryTitle'] = get_field('primary_title', 'options');
-        $this->data['primaryImage'] = get_field('primary_image', 'options');
-        $this->data['secondaryTitle'] = get_field('secondary_title', 'options');
+	protected function setData(): void
+    {
+        $this->data["icons"] = Parser::getSvgIcons();
+        $this->data["title"] = get_bloginfo('name');
     }
 }

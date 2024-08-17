@@ -48,8 +48,9 @@
 <div class="layout-canvas offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasRightLabel"
      id="secondary-nav">
     <div class="offcanvas-header layout-canvas__header">
-        <a class="navbar-brand" href="/">
-            <img src="{$image}" alt="${$title}" width="auto" height="35">
+        <a class="layout-canvas__brand" href="/">
+            <img src="{$logo}" alt="${$title}" width="auto" height="35">
+            <span class="layout-canvas__title">{$title}</span>
         </a>
         <button type="button" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close">
             <span class="wp-svg-icon">{$icons.xmark}</span>
@@ -57,35 +58,5 @@
     </div>
     <div class="layout-canvas__body offcanvas-body">
         {$menu.canvas}
-    </div>
-</div>
-
-<div class="layout-search-popup" id="search-container">
-    <div class="layout-search-popup__header">
-        <button class="btn btn-light" type="button" id="search-close-toggle">
-            <span class="wp-svg-icon">{$icons.xmark}</span>
-        </button>
-    </div>
-    <div class="layout-search-popup__body">
-        <div class="container-md">
-            <div class="layout-search-popup__form">
-                <div class="layout-search-popup__form-wrapper">
-                    <label for="search-input" class="layout-search-popup__form-icon">
-                        <span class="wp-svg-icon">{$icons.search}</span>
-                    </label>
-                    <input
-                            id="search-input"
-                            class="layout-search-popup__form-input"
-                            type="text"
-                            autocomplete="true"
-                            name="search"
-                            placeholder="{$title}"
-                    />
-                </div>
-            </div>
-            <div class="layout-search-popup__results">
-
-            </div>
-        </div>
     </div>
 </div>
