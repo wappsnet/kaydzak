@@ -31,7 +31,22 @@ class Parser {
         return self::$config[$name];
     }
 
-    public static function getLangNotes() {
+    public static function getSvgIcon(string $name): bool|string
+    {
+        return file_get_contents(WAPPSNET_PATH."/icons/".$name.".svg");
+    }
+
+    public static function getSvgIcons(): array
+    {
+        return [
+            "search" => self::getSvgIcon('search'),
+            "bars" => self::getSvgIcon('bars'),
+            "xmark" => self::getSvgIcon('xmark'),
+        ];
+    }
+
+    public static function getLangNotes(): array
+    {
         if (count(self::$notes) == 0) {
             $notes = get_field( 'language_notes', 'options' );
 
@@ -45,7 +60,8 @@ class Parser {
         return self::$notes;
     }
 
-    public static function getLinkNotes() {
+    public static function getLinkNotes(): array
+    {
         if (count(self::$links) == 0) {
             $notes = get_field( 'link_notes', 'options' );
 
@@ -62,19 +78,21 @@ class Parser {
     /**
      * @return mixed
      */
-    public static function getThemeLogo() {
+    public static function getThemeLogo(): mixed
+    {
         if(empty(self::$config['logo'])) {
             $attachmentId = get_theme_mod( 'custom_logo' );
             self::$config['logo'] = wp_get_attachment_image_src( $attachmentId, 'full' );
         }
 
-        return self::$config['logo'];
+        return self::$config['logo'][0];
     }
 
     /**
      * @return mixed
      */
-    public static function getThemeIcon() {
+    public static function getThemeIcon(): mixed
+    {
         if(empty(self::$config['logo'])) {
             $customLogoId = get_theme_mod( 'custom_logo' );
             self::$config['logo'] = wp_get_attachment_image_src( $customLogoId, 'full' )[0];
@@ -84,11 +102,24 @@ class Parser {
     }
 
     /**
+     * @return mixed
+     */
+    public static function getThemeImage(): mixed
+    {
+        if(empty(self::$config['image'])) {
+            self::$config['image'] = get_header_image();
+        }
+
+        return self::$config['image'];
+    }
+
+    /**
      * @param bool $type
      *
      * @return array|mixed
      */
-    public static function getSeoData($type = false) {
+    public static function getSeoData($type = false): mixed
+    {
         global $post;
 
         $return = Array(
@@ -133,7 +164,8 @@ class Parser {
      *
      * @return array|mixed
      */
-    public static function getScripts($type = false) {
+    public static function getScripts($type = false): mixed
+    {
         $theme_url = get_bloginfo('template_directory');
 
         $scripts = Array(

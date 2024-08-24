@@ -4,11 +4,9 @@ namespace Wappsnet\Core;
 class Layout {
 
     protected $data = array(
-
     );
 
     protected $args = array(
-
     );
 
     protected $layoutName;

@@ -14,7 +14,7 @@ RewriteRule . /index.php [L]
 
 # END WordPress
 
-RewriteEngine on
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} (www\.)?kaydzak.local
-RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteEngine on
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP_HOST} (www\.)?kaydzak.ankap
+#RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

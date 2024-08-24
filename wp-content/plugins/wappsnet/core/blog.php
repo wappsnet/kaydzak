@@ -34,6 +34,7 @@ class Blog {
 
         $post = [
             'data' => $postData,
+            'text' => wp_strip_all_tags($postData->post_content),
             'link' => get_permalink($postId),
             'media' => $postMedia,
             'author' => $postAuthor,
@@ -48,9 +49,12 @@ class Blog {
         return $post;
     }
 
-    public static function getPostAuthor($authorId): \WP_User|bool
+    public static function getPostAuthor($authorId): array
     {
-        return get_user_by('id', $authorId);
+        return array(
+            'data' => get_user_by('id', $authorId),
+            'url' => get_author_posts_url($authorId),
+        );
     }
 
     public static function getPostMedia($itemId): array

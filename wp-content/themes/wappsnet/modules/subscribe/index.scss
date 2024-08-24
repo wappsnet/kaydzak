@@ -1,49 +1,47 @@
 .module-subscribe {
   width: 100%;
-  padding: 10px;
-  background-color: $surface-secondary-color;
+  display: flex;
+  justify-content: center;
+  padding: var(--wp-gap-sm);
 
-  .subscribe-title {
+  .module-subscribe__form {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-  }
+    max-width: 500px;
+    position: relative;
+    border-radius: var(--wp-border-radius-lg);
 
-  .subscribe-header {
-    width: 100%;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-  }
-
-  .subscribe-wrapper {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-
-    .subscribe-block {
+    .module-subscribe__input {
       width: 100%;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-height: 50px;
+      padding: var(--wp-gap-xs) 120px var(--wp-gap-xs) var(--wp-gap-md);
+      background-color: var(--color-light);
+      border-radius: inherit;
+      outline: none;
+      border: 0;
+      box-shadow: var(--wp-shadow-sm);
 
-      .subscribe-button {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+      &:focus {
+        box-shadow: var(--wp-shadow-md);
       }
     }
-  }
 
-  .subscribe-footer {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    font-size: 0.75rem;
-    text-align: center;
+    .module-subscribe__button {
+      width: 120px;
+      position: absolute;
+      right: var(--wp-gap-xs);
+      top: var(--wp-gap-xs);
+      bottom: var(--wp-gap-xs);
+      border-radius: inherit;
+      color: var(--color-footer-text);
+      background-color: var(--color-footer);
+      box-shadow: none;
+      cursor: pointer;
+      opacity: 0.9;
+      border: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }

@@ -56,3 +56,7 @@ add_shortcode( 'wp_navigation', function($attr) {
 add_shortcode( 'wp_search', function($attr) {
     return Render::get_module('Search', $attr);
 });
+
+add_shortcode( 'wp_subscribe', function($attr) {
+    return Render::get_module('Subscribe', $attr);
+});
