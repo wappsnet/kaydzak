@@ -101,16 +101,22 @@
   }
 
   .app-page-title {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Gotham', serif;
+  }
+
+  .app-page-heading {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: var(--wp-gap-lg);
-    font-size: 42px;
+    font-size: 3em;
     text-align: center;
     white-space: nowrap;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 500;
     color: var(--color-primary);
     margin: var(--wp-gap-lg) 0;
 
@@ -131,5 +137,10 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  .row {
+    --bs-gutter-x: var(--wp-gap-sm);
+    --bs-gutter-y: var(--wp-gap-sm);
   }
 }

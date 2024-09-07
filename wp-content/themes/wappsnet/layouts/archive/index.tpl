@@ -1,6 +1,6 @@
 <div class="archive-page-layout">
     <div class="container-lg">
-        <h1>
+        <h1 class="app-page-title">
             <span class="wp-svg-icon">{$category.fields.term_svg.value}</span>
             {$category.data->name}
         </h1>

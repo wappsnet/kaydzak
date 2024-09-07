@@ -173,13 +173,13 @@
               "fontFamily": "Gotham",
               "fontStyle": "normal",
               "fontWeight": "normal",
-              "src": ["file:./assets/fonts/gotham/Gotham-Black.woff2"]
+              "src": ["file:./assets/fonts/gotham/Gotham-Book.otf"]
             },
             {
               "fontFamily": "Gotham",
               "fontStyle": "normal",
               "fontWeight": "bold",
-              "src": ["file:./assets/fonts/gotham/Gotham-Black-Bold.woff2"]
+              "src": ["file:./assets/fonts/gotham/Gotham-Black.woff2"]
             }
           ],
           "fontFamily": "Gotham",

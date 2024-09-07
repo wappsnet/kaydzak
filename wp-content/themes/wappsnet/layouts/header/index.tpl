@@ -1,19 +1,16 @@
 <nav class="layout-header navbar navbar-expand-md sticky-top">
-    <div class="container-fluid justify-content-between">
+    <div class="container-fluid justify-content-between" style="{$styles.header}">
         <div class="layout-header__navbar left-menu">
             <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#secondary-nav"
                     aria-controls="secondary-nav">
                 <span class="wp-svg-icon">{$icons.bars}</span>
-            </button>
-            <button class="btn btn-light" type="button" id="search-open-toggle">
-                <span class="wp-svg-icon">{$icons.search}</span>
             </button>
             <div class="collapse navbar-collapse layout-header__navbar-menu">
                 <ul class="navbar-nav">
                     {foreach from=$menu.primary item=menuItem}
                         {if !$menuItem->menu_item_parent}
                             <li class="nav-item">
-                                <a class="nav-link" href="{$menuItem->url}">
+                                <a class="nav-link app-nav-item" href="{$menuItem->url}">
                                     {$menuItem->title}
                                 </a>
                             </li>
@@ -33,7 +30,7 @@
                     {foreach from=$menu.secondary item=menuItem}
                         {if !$menuItem->menu_item_parent}
                             <li class="nav-item">
-                                <a class="nav-link" href="{$menuItem->url}">
+                                <a class="nav-link app-nav-item" href="{$menuItem->url}">
                                     {$menuItem->title}
                                 </a>
                             </li>
@@ -41,6 +38,9 @@
                     {/foreach}
                 </ul>
             </div>
+            <button class="btn btn-light" type="button" id="search-open-toggle">
+                <span class="wp-svg-icon">{$icons.search}</span>
+            </button>
         </div>
     </div>
 </nav>

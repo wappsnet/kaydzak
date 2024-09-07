@@ -27,7 +27,7 @@
 
   .single-page-layout__media {
     width: 100%;
-    padding: var(--wp-gap-xl);
+    padding: var(--wp-gap-sm);
 
     img {
       width: 100%;
@@ -36,6 +36,11 @@
   }
 
   .single-page-layout__content {
-    padding: var(--wp-gap-xl);
+    padding: var(--wp-gap-sm);
+    margin: 0 auto;
+  }
+
+  .single-page-layout__author {
+    width: 100%;
   }
 }

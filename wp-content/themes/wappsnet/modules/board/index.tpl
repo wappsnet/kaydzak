@@ -1,7 +1,7 @@
 <div class="module-board">
     <div class="row justify-content-center">
         {foreach from=$board.people item=item}
-            <div class="col col-lg-4 col-md-6 col-sm-12">
+            <div class="col-12 col-lg-4 col-md-6 col-sm-12">
                 <div class="module-board__item">
                     <div class="module-board__item-wrapper">
                         <a class="module-board__item-avatar" href="{$item.data.link}">

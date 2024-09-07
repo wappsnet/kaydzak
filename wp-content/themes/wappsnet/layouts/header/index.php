@@ -1,6 +1,7 @@
 <?php
 namespace Layouts;
 
+use Wappsnet\Core\Blog;
 use Wappsnet\Core\Layout;
 use Wappsnet\Core\Parser;
 
@@ -23,5 +24,6 @@ class Header extends Layout
         $this->data["image"] = Parser::getThemeImage();
         $this->data["logo"] = Parser::getThemeLogo();
         $this->data["title"] = get_bloginfo('name');
+        $this->data['styles'] = Blog::getLayoutStyles();
     }
 }

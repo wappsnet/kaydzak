@@ -4,7 +4,7 @@
             <img alt="{$post.data->post_title}" src="{$post.media.image}"/>
         </div>
         <hr/>
-        <h1>{$post.data->post_title}</h1>
+        <h1 class="app-page-title">{$post.data->post_title}</h1>
         <hr/>
         <div class="single-page-layout__categories">
             {foreach from=$post.categories item=category}
@@ -15,8 +15,15 @@
             {/foreach}
         </div>
         <hr/>
-        <div class="single-page-layout__content">
+        <div class="single-page-layout__meta">
+            {$meta}
+        </div>
+        <hr/>
+        <div class="single-page-layout__content" style="{$styles.post}">
             {$post.data->post_content}
+        </div>
+        <div class="single-page-layout__author">
+            {$author}
         </div>
     </div>
 </div>

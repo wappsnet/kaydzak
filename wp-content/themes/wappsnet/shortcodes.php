@@ -3,7 +3,7 @@
 use Wappsnet\Core\Render;
 
 add_shortcode( 'wp_latest_posts', function($attr) {
-    $attr = array_merge(['size' => 5], $attr);
+    $attr = array_merge(['size' => 9], $attr);
 
     return Render::get_module('Latest', [
         'size' => $attr['size'],

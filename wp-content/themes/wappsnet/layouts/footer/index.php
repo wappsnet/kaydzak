@@ -1,6 +1,7 @@
 <?php
 namespace Layouts;
 
+use Wappsnet\Core\Blog;
 use Wappsnet\Core\Layout;
 use WP_Query;
 
@@ -14,5 +15,7 @@ class Footer extends Layout
         ]);
 
         $this->data['content'] = do_blocks(apply_filters('the_content', $patterns->post->post_content));
+        $this->data['styles'] = Blog::getLayoutStyles();
+
     }
 }

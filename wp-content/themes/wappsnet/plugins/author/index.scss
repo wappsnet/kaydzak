@@ -1,0 +1,52 @@
+.plugin-author {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--wp-gap-lg);
+  margin: var(--wp-gap-xl) auto;
+
+  .plugin-author__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wp-gap-sm);
+
+    .author-page-layout__title {
+      width: 100%;
+      font-weight: bold;
+
+      a {
+        color: var(--color-dark);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .author-page-layout__departments {
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .author-page-layout__content {
+      width: 100%;
+    }
+  }
+
+  .plugin-author__media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+  }
+}

@@ -13,7 +13,26 @@ const Api = {
   }
 }
 
+const Validate = {
+  email: (val) => {
+    const regexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regexp.test(val);
+  },
+  required: (val) => {
+    return !!val;
+  }
+}
+
 const Core = {
+  initModal: () => {
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('wp-modal-backdrop')) {
+        document.querySelector('.modal.show').classList.remove('show');
+      } else if (e.target.classList.contains('wp-modal-close')) {
+        document.querySelector('.modal.show').classList.remove('show');
+      }
+    })
+  },
   initSearch: () => {
     const searchInput = document.getElementById('wp-search-input')
     const openSearchButton = document.getElementById('search-open-toggle');
@@ -61,17 +80,33 @@ const Core = {
   initSubscribe: () => {
     const subscribeInput = document.getElementById('wp-subscribe-input');
     const subscribeButton = document.getElementById('wp-subscribe-button');
+    const subscribeResult = document.getElementById('wp-subscribe-result');
 
     subscribeButton.addEventListener('click', () => {
-      const value = subscribeInput.value();
-      axios.post(Api.subscribe.endpoint, qs.stringify({
-        action: Api.subscribe.action,
-        email: value,
-      })).then((response) => {
-        if (response.data.content) {
-          console.log(response.data.content);
-        }
-      })
+      subscribeButton.classList.add('loading')
+      const value = subscribeInput.value;
+
+      subscribeResult.innerHTML = '';
+
+      if (!Validate.email(value)) {
+        subscribeInput.classList.add('invalid');
+        subscribeButton.classList.remove('loading');
+        subscribeInput.value = '';
+      } else {
+        subscribeInput.classList.remove('invalid');
+        axios.post(Api.subscribe.endpoint, qs.stringify({
+          action: Api.subscribe.action,
+          email: value,
+        })).then((response) => {
+          if (response.data.content) {
+            subscribeResult.innerHTML = response.data.content;
+            subscribeInput.value = '';
+          }
+        }).finally(() => {
+          subscribeButton.classList.remove('loading');
+          subscribeInput.value = '';
+        });
+      }
     })
   }
 }
@@ -90,6 +125,7 @@ window.addEventListener('scroll', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  Core.initModal();
   Core.initSearch();
   Core.initSubscribe();
 })

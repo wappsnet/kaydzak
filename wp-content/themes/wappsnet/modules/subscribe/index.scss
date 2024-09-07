@@ -17,11 +17,16 @@
       background-color: var(--color-light);
       border-radius: inherit;
       outline: none;
-      border: 0;
+      border: 2px solid var(--color-footer);
       box-shadow: var(--wp-shadow-sm);
 
       &:focus {
         box-shadow: var(--wp-shadow-md);
+      }
+
+      &.invalid {
+        color: var(--color-danger);
+        border: 2px solid var(--color-danger);
       }
     }
 
@@ -42,6 +47,18 @@
       &:hover {
         opacity: 1;
       }
+
+      &.loading {
+        content: '...';
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .module-subscribe__result {
+    &:empty {
+      display: none;
     }
   }
 }

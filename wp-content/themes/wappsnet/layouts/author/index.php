@@ -10,18 +10,11 @@ class Author extends Layout
 {
     protected function setData(): void
     {
-        $user = get_queried_object();
+        global $post;
 
-        $query = new WP_Query([
-            'name' => $user->user_login,
-            'post_type' => 'people'
-        ]);
+        $user = get_userdatabylogin($post->post_name);
 
-        $posts = $query->get_posts();
-
-        $people = $posts[0];
-
-        $data = Blog::getPostData($people->ID, ['department']);
+        $data = Blog::getPostData($post->ID, ['department']);
         $author = array(
             'data' => $user,
             'post' => $data,
@@ -52,7 +45,7 @@ class Author extends Layout
         $count = count($all);
 
         foreach ($posts as $key => $postId) {
-            $posts[$key] =  Render::get_plugin('Post', [
+            $posts[$key] = Render::get_plugin('Post', [
                 "id" => $postId,
             ]);
         }
@@ -61,8 +54,17 @@ class Author extends Layout
             'count' => $count
         ]);
 
+        $pattern = new WP_Query([
+            'name' => 'block-pattern-wp-author-meta',
+            'post_type' => 'wp_block',
+        ]);
+
+        $meta = do_blocks(apply_filters('the_content', $pattern->post->post_content));
+
+        $this->data['meta'] = $meta;
         $this->data['posts'] = $posts;
         $this->data['pagination'] = $pagination;
         $this->data['author'] = $author;
+        $this->data['styles'] = Blog::getLayoutStyles();
     }
 }

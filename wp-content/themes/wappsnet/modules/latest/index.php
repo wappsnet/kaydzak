@@ -10,7 +10,8 @@ class Latest extends Module
         'size' => 9
     );
 
-    protected function setData() {
+    protected function setData(): void
+    {
         $posts = get_posts([
             "numberposts" => $this->args["size"],
             "fields" => "ids",
@@ -28,7 +29,7 @@ class Latest extends Module
         $fractions = array(
           'main' => array_slice($posts, 0, 1),
           'primary' => array_slice($posts, 2, 2),
-          'secondary' => array_slice($posts, 3, 2)
+          'secondary' => array_slice($posts, 4, 2)
         );
 
         $this->data['items'] = $fractions;
