@@ -4,3 +4,5 @@
 **/caches
 **/node_modules
 .idea
+/local/
+/live/

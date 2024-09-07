@@ -230,6 +230,42 @@
           "comment_status": "closed",
           "ping_status": "closed",
           "post_type": "wp_block"
+        },
+        {
+          "post_title": "WP Subscribe",
+          "post_name": "block-pattern-wp-subscribe",
+          "post_content": "<!-- wp:heading {\"textAlign\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-dark\"}}}},\"textColor\":\"color-dark\",\"fontFamily\":\"roboto\"} -->\n<h2 class=\"wp-block-heading has-text-align-center has-color-dark-color has-text-color has-link-color has-roboto-font-family\">Congratulations!</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-dark\"}}}},\"textColor\":\"color-dark\",\"fontFamily\":\"roboto\"} -->\n<p class=\"has-text-align-center has-color-dark-color has-text-color has-link-color has-roboto-font-family\">You have successfully subscribed to our newsletter! 🎉</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-dark\"}}}},\"textColor\":\"color-dark\",\"fontFamily\":\"roboto\"} -->\n<p class=\"has-text-align-center has-color-dark-color has-text-color has-link-color has-roboto-font-family\">From now on, you'll be the first to know about our latest news, updates, and exclusive offers. Our emails will provide you with a wealth of information, tips, and special deals tailored just for you.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-dark\"}}}},\"textColor\":\"color-dark\",\"fontFamily\":\"roboto\"} -->\n<p class=\"has-text-align-center has-color-dark-color has-text-color has-link-color has-roboto-font-family\">Please keep an eye on your inbox for our informative and entertaining newsletters. If you ever wish to unsubscribe, you'll find an 'unsubscribe' link in every email we send.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|color-dark\"}}}},\"textColor\":\"color-dark\",\"fontFamily\":\"roboto\"} -->\n<p class=\"has-text-align-center has-color-dark-color has-text-color has-link-color has-roboto-font-family\">Thank you for showing interest in our content. We're delighted to have you aboard!</p>\n<!-- /wp:paragraph -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        },
+        {
+          "post_title": "WP Post Meta",
+          "post_name": "block-pattern-wp-post-meta",
+          "post_content": "<!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"level\":6,\"lock\":{\"move\":false,\"remove\":true},\"fontFamily\":\"roboto\"} -->\n<h6 class=\"wp-block-heading has-roboto-font-family\">By <strong>{author}</strong> at <strong>{date}</strong></h6>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"lock\":{\"move\":false,\"remove\":true},\"fontFamily\":\"roboto\"} -->\n<p class=\"has-roboto-font-family\"><strong>{time}</strong> minutes to read</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        },
+        {
+          "post_title": "WP Post Meta",
+          "post_name": "block-pattern-wp-author",
+          "post_content": "<!-- wp:group {\"style\":{\"spacing\":{\"padding\":{\"right\":\"0\",\"left\":\"0\",\"top\":\"var:preset|spacing|30\",\"bottom\":\"var:preset|spacing|30\"},\"blockGap\":\"var:preset|spacing|20\",\"margin\":{\"top\":\"var:preset|spacing|30\",\"bottom\":\"var:preset|spacing|30\"}},\"border\":{\"top\":{\"color\":\"var:preset|color|color-footer\",\"width\":\"3px\"},\"right\":{},\"bottom\":{\"color\":\"var:preset|color|color-footer\",\"width\":\"3px\"},\"left\":{}}},\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\" style=\"border-top-color:var(--wp--preset--color--color-footer);border-top-width:3px;border-bottom-color:var(--wp--preset--color--color-footer);border-bottom-width:3px;margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30);padding-top:var(--wp--preset--spacing--30);padding-right:0;padding-bottom:var(--wp--preset--spacing--30);padding-left:0\"><!-- wp:heading {\"level\":4,\"style\":{\"typography\":{\"fontStyle\":\"normal\",\"fontWeight\":\"700\"}},\"fontFamily\":\"gotham\"} -->\n<h4 class=\"wp-block-heading has-gotham-font-family\" style=\"font-style:normal;font-weight:700\">ABOUT THE AUTHOR</h4>\n<!-- /wp:heading -->\n\n<!-- wp:html {\"lock\":{\"move\":false,\"remove\":true}} -->\n{author}\n<!-- /wp:html --></div>\n<!-- /wp:group -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
+        },
+        {
+          "post_title": "WP Post Meta",
+          "post_name": "block-pattern-wp-author-meta",
+          "post_content": "<!-- wp:group {\"style\":{\"spacing\":{\"margin\":{\"top\":\"var:preset|spacing|20\",\"bottom\":\"var:preset|spacing|10\"}}},\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\",\"justifyContent\":\"stretch\"}} -->\n<div class=\"wp-block-group\" style=\"margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--10)\"><!-- wp:heading {\"level\":4,\"style\":{\"typography\":{\"fontStyle\":\"normal\",\"fontWeight\":\"700\",\"textTransform\":\"uppercase\"}},\"fontFamily\":\"gotham\"} -->\n<h4 class=\"wp-block-heading has-gotham-font-family\" style=\"font-style:normal;font-weight:700;text-transform:uppercase\">Articles by the author</h4>\n<!-- /wp:heading --></div>\n<!-- /wp:group -->",
+          "post_status": "publish",
+          "comment_status": "closed",
+          "ping_status": "closed",
+          "post_type": "wp_block"
         }
       ]
     }

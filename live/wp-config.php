@@ -78,11 +78,10 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
-/* Add any custom values between this line and the "stop editing" line. */
-
-
+define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST']);
+define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
 
 /* That's all, stop editing! Happy publishing. */
 

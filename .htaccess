@@ -4,7 +4,8 @@
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#RewriteCond %{HTTPS} off
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -13,8 +14,3 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
-
-#RewriteEngine on
-#RewriteCond %{HTTPS} off
-#RewriteCond %{HTTP_HOST} (www\.)?kaydzak.ankap
-#RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

@@ -79,7 +79,8 @@ class Render {
         return $layout->init_get($args);
 	}
 
-	public static function load_plugin($pluginName,  $args = false) {
+	public static function load_plugin($pluginName,  $args = false): void
+    {
 		$plugin = '\Plugins\\'.$pluginName;
 		$plugin = new $plugin();
 

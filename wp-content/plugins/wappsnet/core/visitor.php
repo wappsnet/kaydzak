@@ -8,6 +8,8 @@
 
 namespace Wappsnet\Core;
 
+use WP_Query;
+
 class Visitor
 {
     /**
@@ -26,12 +28,23 @@ class Visitor
 
         if (is_wp_error($result)) {
             return [
-                'content' => 'error'
+                'content' => Render::get_plugin('Response', [
+                    'title' => 'Subscribe',
+                    'content' => $result->get_error_message()
+                ])
             ];
         }
 
+        $patterns = new WP_Query([
+            'name' => 'block-pattern-wp-subscribe',
+            'post_type' => 'wp_block',
+        ]);
+
         return [
-            'content' => 'success'
+            'content' => Render::get_plugin('Response', [
+                'title' => 'Subscribe',
+                'content' => do_blocks(apply_filters('the_content', $patterns->post->post_content))
+            ])
         ];
     }
 

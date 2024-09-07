@@ -18,6 +18,9 @@
  * @package WordPress
  */
 
+define( 'WP_ALLOW_MULTISITE', true );
+
+
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'kaydzak' );
@@ -78,10 +81,16 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+
+/* Add any custom values between this line and the "stop editing" line. */
+// Identify the relevant protocol for the current request
+// Set SITEURL and HOME using a dynamic protocol.
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
 
 
 /* That's all, stop editing! Happy publishing. */

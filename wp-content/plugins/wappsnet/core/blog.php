@@ -10,8 +10,14 @@ namespace Wappsnet\Core;
 
 
 use WP_Error;
+use WP_Query;
 
 class Blog {
+    public static function getReadingTime($text, $wpm = 100): float
+    {
+        $totalWords = str_word_count(strip_tags($text));
+        return floor($totalWords / $wpm);
+    }
     public static function getPostData($postId, $terms = ['category']): array
     {
         $postData = get_post($postId);
@@ -49,11 +55,23 @@ class Blog {
         return $post;
     }
 
+    public static function getPeopleByName($slug = '') {
+        $query = new WP_Query([
+            "post_type" => "people",
+            "name" => $slug,
+        ]);
+
+        return $query->have_posts() ? reset($query->posts) : null;
+    }
+
     public static function getPostAuthor($authorId): array
     {
+        $user = get_user_by('id', $authorId);
+        $people = self::getPeopleByName($user->user_login);
+
         return array(
             'data' => get_user_by('id', $authorId),
-            'url' => get_author_posts_url($authorId),
+            'url' => get_permalink($people->ID),
         );
     }
 
@@ -124,5 +142,60 @@ class Blog {
         }
 
         return $characters;
+    }
+
+    public static function getLayoutStyles(): array
+    {
+        $cache = wp_cache_get( 'layout-styles');
+
+        if (!$cache) {
+            $layouts = [
+                "header" => [
+                    [
+                        "key" => "max-width",
+                        "value" => get_theme_mod('header_layout_size'),
+                    ]
+                ],
+                "footer" => [
+                    [
+                        "key" => "max-width",
+                        "value" => get_theme_mod('footer_layout_size'),
+                    ]
+                ],
+                "page" => [
+                    [
+                        "key" => "max-width",
+                        "value" => get_theme_mod('page_layout_size'),
+                    ]
+                ],
+                "post" => [
+                    [
+                        "key" => "max-width",
+                        "value" => get_theme_mod('post_layout_size'),
+                    ]
+                ]
+            ];
+
+            $styles = [
+                "header" => array_reduce($layouts["header"], function ($carry, $item) {
+                    return $carry . $item['key'] . ': ' . $item['value'] . '; ';
+                }, ""),
+                "footer" => array_reduce($layouts["footer"], function ($carry, $item) {
+                    return $carry . $item['key'] . ': ' . $item['value'] . '; ';
+                }, ""),
+                "post" => array_reduce($layouts["post"], function ($carry, $item) {
+                    return $carry . $item['key'] . ': ' . $item['value'] . '; ';
+                }, ""),
+                "page" => array_reduce($layouts["page"], function ($carry, $item) {
+                    return $carry . $item['key'] . ': ' . $item['value'] . '; ';
+                }, "")
+            ];
+
+            wp_cache_set('layout-styles', $styles);
+
+            return $styles;
+        }
+
+        return $cache;
     }
 }

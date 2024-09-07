@@ -119,7 +119,7 @@ function runApp(): void
                         $block_pattern_id = wp_insert_post($item);
 
                         if (!is_wp_error($block_pattern_id)) {
-                            add_post_meta($block_pattern_id, 'wp_pattern_sync_status', '');
+                            add_post_meta($block_pattern_id, 'wp_pattern_sync_status', 'unsynced');
 
                             if (!is_wp_error($block_patter_category)) {
                                 wp_set_object_terms($block_pattern_id, $pattern['slug'], 'wp_pattern_category');
