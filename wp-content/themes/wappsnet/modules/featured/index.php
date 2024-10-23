@@ -1,25 +1,25 @@
 <?php
 namespace Modules;
 
-use Wappsnet\Core\Blog;
 use Wappsnet\Core\Module;
 use Wappsnet\Core\Render;
 
-class Popular extends Module {
+class Featured extends Module {
     protected $args = [
-        'size' => 12
+        'size' => 12,
+        'slug' => 'featured',
     ];
 
     protected function setData(): void
     {
-        $latest = Blog::getLatestPosts(["numberposts" => 9]);
+        $term = get_term_by('slug', $this->args['slug'], 'board');
 
         $posts = get_posts([
             "numberposts" => $this->args['size'],
-            "exclude" => $latest,
             "orderby" => "wpb_post_views_count",
             "fields" => "ids",
-            "post_type" => "post"
+            "post_type" => "post",
+            'section' => $term->slug,
         ]);
 
         foreach ($posts as $key => $postId) {

@@ -198,4 +198,15 @@ class Blog {
 
         return $cache;
     }
+
+    public static function getLatestPosts($args): array
+    {
+        return get_posts([
+            ...$args,
+            "fields" => "ids",
+            "post_type" => "post",
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+        ]);
+    }
 }

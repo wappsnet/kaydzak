@@ -18,6 +18,15 @@ add_shortcode( 'wp_popular_posts', function($attr) {
     ]);
 });
 
+add_shortcode( 'wp_featured_posts', function($attr) {
+    $attr = array_merge(['size' => 8], $attr);
+
+    return Render::get_module('Featured', [
+        'size' => $attr['size'],
+        'slug' => $attr['slug'],
+    ]);
+});
+
 add_shortcode( 'wp_board', function($attr) {
     $attr = array_merge(['slug' => ''], $attr);
 

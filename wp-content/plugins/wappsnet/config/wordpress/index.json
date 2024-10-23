@@ -79,6 +79,23 @@
       }
     },
     {
+      "name": "section",
+      "settings": [
+        "post"
+      ],
+      "params": {
+        "label": "Sections",
+        "meta_box_cb": "post_categories_meta_box",
+        "hierarchical": true,
+        "query_var": true,
+        "show_in_rest": true,
+        "rewrite": {
+          "slug": "section",
+          "hierarchical": true
+        }
+      }
+    },
+    {
       "name": "board",
       "settings": [
         "people"
